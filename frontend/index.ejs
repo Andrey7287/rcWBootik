@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700" rel="stylesheet" />
+	<link rel="shortcut icon" href="./favicon.ico">
+</head>
+
+<body>
+	<div class="body">
+		<div class="content">
+			<header class="header">
+				<div class="top-panel">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="search">
+								<form action="/search/" method="get">
+									<input class="search__input" type="text" name="q" placeholder="Поиск по сайту">
+									<input class="search__submit" type="submit" value="найти">
+								</form>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<!-- Social template -->
+							<% var social = [
+								{fb: "facebook"},
+								{in: "instagram"}
+							] %>
+							<div class="soc">
+							<%	social.forEach((item)=>{
+										for (key in item) { %>
+											<a href="www.<%= item[key] %>.com" class="soc__item soc__item--<%= key %>"><%= item[key] %></a>
+								<%	}
+									}); %>
+
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="personal-cabinet">
+								<a href="#">Личный кабинет покупателя</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-6">
+							<a href="/" class="site-logo">Винный<br /><span>бутик</span></a>
+						</div>
+						<div class="col-xs-6">
+							<div class="contacts">
+								<div class="contacts__phone">+7 (495) 792-56-16</div>
+								<div class="contacts__addr">Москва, ул. Садовая-Черногрязская, д.8, стр.7</div>
+								<div class="contacts__time">ежедневно с 10.00 до 21.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+
+					<nav id="siteMenu">
+						<button class="c-hamburger c-hamburger--htx">
+							<span>toggle menu</span>
+						</button>
+						<!-- Site menu data -->
+						<%
+						var menuItems = ['о&nbsp;винном бутике ','каталог продукции','дегустации','акции и программы лояльности','оптовикам']
+						%>
+						<!-- Site menu template -->
+						<ul class="site-nav">
+						<% menuItems.forEach((item, idx)=>{ %>
+
+							<li class="site-nav__item<% if(!idx){ %> site-nav__item--act<%}%>">
+								<a href=""><%=item %></a>
+							</li>
+						<% }); %>
+						</ul>
+						.
+					</nav>
+
+				</div>
+			</header>
+			<!-- HEADER end-->
+
+			<div class="slider-wrapp">
+				<div class="slider">
+					<div class="slider__item">
+						<img src="images/slider1.jpg" alt="">
+					</div>
+					<div class="slider__item">
+						<img src="images/slider2.jpg" alt="">
+					</div>
+				</div>
+				<button class="slider-arrow left">previos</button>
+				<button class="slider-arrow right">next</button>
+				<div class="slider-dots"></div>
+			</div>
+
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="copyright">© Lorem ipsum dolor sit amet. 2017</div>
+					</div>
+					<div class="col-xs-6">
+						<a href="http://infodesign.ru/" class="infodisign">© Создание сайта и дизайн «Инфодизайн» 2017</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<button href="#" class="scrollup">Наверх</button>
+	</div>
+</body>
+
+</html>
