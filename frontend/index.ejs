@@ -5,7 +5,8 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet" />
 	<link rel="shortcut icon" href="./favicon.ico">
 </head>
 
@@ -14,33 +15,37 @@
 		<div class="content">
 			<header class="header">
 				<div class="top-panel">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="search">
-								<form action="/search/" method="get">
-									<input class="search__input" type="text" name="q" placeholder="Поиск по сайту">
-									<input class="search__submit" type="submit" value="найти">
-								</form>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="search">
+									<form action="/search/" method="get">
+										<input class="search__input" type="text" name="q" placeholder="Поиск по сайту">
+										<input class="search__submit" type="submit" value="найти">
+									</form>
+								</div>
 							</div>
-						</div>
-						<div class="col-sm-2">
-							<!-- Social template -->
-							<% var social = [
-								{fb: "facebook"},
-								{in: "instagram"}
-							] %>
-							<div class="soc">
-							<%	social.forEach((item)=>{
-										for (key in item) { %>
-											<a href="www.<%= item[key] %>.com" class="soc__item soc__item--<%= key %>"><%= item[key] %></a>
-								<%	}
-									}); %>
+							<div class="col-sm-2">
+								<!-- Social template -->
+								<% var social = [
+									{fb: "facebook"},
+									{in: "instagram"}
+								] %>
+									<div class="soc">
+										<%	social.forEach((item)=>{
+											for (key in item) { %>
+											<a href="www.<%= item[key] %>.com" class="soc__item soc__item--<%= key %>">
+												<%= item[key] %>
+											</a>
+											<%	}
+										}); %>
 
+									</div>
 							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="personal-cabinet">
-								<a href="#">Личный кабинет покупателя</a>
+							<div class="col-sm-4">
+								<div class="personal-cabinet">
+									<a href="/cabinet.html">Личный кабинет покупателя</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -51,11 +56,13 @@
 							<a href="/" class="site-logo">Винный<br /><span>бутик</span></a>
 						</div>
 						<div class="col-xs-6">
-							<div class="contacts">
-								<div class="contacts__phone">+7 (495) 792-56-16</div>
-								<div class="contacts__addr">Москва, ул. Садовая-Черногрязская, д.8, стр.7</div>
-								<div class="contacts__time">ежедневно с 10.00 до 21.00</div>
-							</div>
+							<address>
+								<div class="contacts">
+									<div class="contacts__phone">+7 (495) 792-56-16</div>
+									<div class="contacts__addr">Москва, ул. Садовая-Черногрязская, д.8, стр.7</div>
+									<div class="contacts__time">ежедневно с 10.00 до 21.00</div>
+								</div>
+							</address>
 						</div>
 					</div>
 				</div>
@@ -67,53 +74,188 @@
 						</button>
 						<!-- Site menu data -->
 						<%
-						var menuItems = ['о&nbsp;винном бутике ','каталог продукции','дегустации','акции и программы лояльности','оптовикам']
+						var menuItems = [
+							{'о&nbsp;винном бутике': '#about'},
+							{'каталог продукции': '\catalog.html'},
+							{'дегустации': '\tasting.html'},
+							{'акции и программы лояльности': '#promo'},
+							{'оптовикам': '\opt.html' }
+						]
 						%>
-						<!-- Site menu template -->
-						<ul class="site-nav">
-						<% menuItems.forEach((item, idx)=>{ %>
-
-							<li class="site-nav__item<% if(!idx){ %> site-nav__item--act<%}%>">
-								<a href=""><%=item %></a>
-							</li>
-						<% }); %>
-						</ul>
-						.
+							<!-- Site menu template -->
+							<ul class="site-nav">
+								<%	menuItems.forEach((item, idx)=>{
+									for (key in item) { %>
+									<li class="site-nav__item<% if(!idx){ %> site-nav__item--act<%}%>">
+										<a href="<%=item[key] %>">
+											<%=key %>
+										</a>
+									</li>
+									<%	}
+						});	%>
+							</ul>
 					</nav>
 
 				</div>
 			</header>
 			<!-- HEADER end-->
 
+			<!-- SLIDER -->
 			<div class="slider-wrapp">
 				<div class="slider">
-					<div class="slider__item">
-						<img src="images/slider1.jpg" alt="">
-					</div>
-					<div class="slider__item">
-						<img src="images/slider2.jpg" alt="">
-					</div>
+					<%	for( var i = 1; i < 3; i++){	%>
+						<div class="slider__item">
+							<img src="images/slider<%=i %>.jpg" alt="">
+							<div class="slider__inner">
+								<div class="slider__txt">
+									<div class="head">Элитное<span>крымское вино</span></div>
+									<div class="about">с яркой индивидуальностью, по современным мировым стандартам</div>
+								</div>
+							</div>
+						</div>
+						<%	}	%>
 				</div>
 				<button class="slider-arrow left">previos</button>
 				<button class="slider-arrow right">next</button>
 				<div class="slider-dots"></div>
 			</div>
 
+			<!-- TEXT -->
+			<div class="main-about">
+				<div class="container">
+					<div class="main-about__item">
+						<p>Мы предлагаем вина и крепкий алкоголь от ведущих хозяйств со всего мира, часть из них представлены эксклюзивно. Так же в Бутике есть профессиональный дегустационный зал, в них регулярно проходят учебные или клубные дегустации, а также встречи с представителями винных домов. Наши Профессиональные Кависты всегда помогут сделать правильный выбор, подберут то, что нужно именно Вам. юбители терруарных крымских вин могут получить в магазине дисконтные карты с системой начисления баллов за сделанные покупки.</p>
+					</div>
+					<div class="main-about__item">
+						<img src="images/discont-card.png" alt="дисконтная карта" />
+						<img src="images/card-shadow.png" alt="" />
+						<a href="#" class="with-arrow">Как получить дисконтную карту</a>
+					</div>
+				</div>
+			</div>
+			<div class="main-catalog">
+				<div class="container">
+					<div class="h1">Ассортимент бутика</div>
+					<div class="main-catalog__filter">
+						<div class="tags tags--lv2">
+							<ul>
+								<li><a href="" class="tags__item tags__item--act">Вино тихое</a></li>
+								<li><a href="" class="tags__item">Шампанское</a></li>
+								<li><a href="" class="tags__item">Вино игристое</a></li>
+								<li><a href="" class="tags__item">Винные напитки</a></li>
+							</ul>
+						</div>
+						<div class="tags tags--lv3">
+							<ul>
+								<li><a href="" class="tags__item">Белое</a></li>
+								<li><a href="" class="tags__item">Красное</a></li>
+								<li><a href="" class="tags__item">Розовое</a></li>
+								<li><a href="" class="tags__item">Сухое</a></li>
+								<li><a href="" class="tags__item">Полусухое</a></li>
+								<li><a href="" class="tags__item">Полусладкое</a></li>
+								<li><a href="" class="tags__item">Десертное</a></li>
+							</ul>
+						</div>
+						<div class="tags tags--lv3">
+							<ul>
+								<li><a href="" class="tags__item">Европа</a></li>
+								<li><a href="" class="tags__item tags__item--act">Россия</a></li>
+								<li><a href="" class="tags__item">Новый свет</a></li>
+							</ul>
+						</div>
+						<div class="tags tags--lv1">
+							<ul>
+								<li><a href="" class="tags__item">Новинки</a></li>
+								<li><a href="" class="tags__item">Рекомендуем</a></li>
+								<li><a href="" class="tags__item">В коллекцию</a></li>
+								<li><a href="" class="tags__item">Подарочные наборы</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="catalog">
+						<!-- Catalo data -->
+						<%
+							var menuItems = [
+								{'Bianco<br />Da Sole': ['Сортовое','столовое','полусладкое','белое','вино']},
+								{'Rosso<br />Da Sole': ['Сортовое','столовое','полусладкое','розове','вино']},
+								{'Vino di<br />Conteria': ['Сортовое','столовое','полусухое','красное','вино']},
+								{'21': ['Сортовое','столовое','полусладкое']},
+								{'Le<br />Caprice': ['Сортовое','столовое','полусладкое']},
+								{'Scarlatto<br />da Sole': ['Сортовое','столовое','полусладкое','белое']},
+								{'Beau<br />Monde': ['Сортовое','столовое','полусладкое','сухое белое']},
+								{'Tramonto': ['Выдержанное','сухое','красное вино']},
+								{'Saint<br />Daniel': ['Сортовое','выдержанное','крепленое','красное','десертное','вино']},
+								{'Forte': ['Сортовое','столовое','полусладкое','белое','вино']},
+								{'Dolce<br />Passione': ['Сортовое','выдержанное','крепленое','белое','десертное','вино']},
+								{'Jannet': ['Сортовое','выдержанное','крепленое','белое','лекерное','вино']},
+							]
+							%>
+							<!-- Catalog template -->
+							<div class="row">
+								<%	menuItems.forEach((item, idx)=>{
+										for (key in item) {	%>
+									<div class="col-md-3">
+										<a class="catalog__item" href="#">
+											<div class="card">
+												<div class="card__img">
+													<img src="images/bottle_<%=++idx %>.png" alt="">
+												</div>
+												<div class="card__head">
+													<%=key %>
+												</div>
+												<%	var list = item[key];
+																list.forEach((item)=>{	%>
+													<span><%=item %></span>
+													<%	})	%>
+											</div>
+										</a>
+									</div>
+									<%	}
+							});	%>
+							</div>
+							<div class="catalog__link"><a href="" class="with-arrow--big">В каталог продукции</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-news">
+				<div class="container">
+					<div class="h1">Новости и события</div>
+					<div class="news">
+						<div class="row">
+							<% for( var i = 1; i < 4; i++) {	%>
+								<div class="col-sm-4">
+									<div class="news__date">20 января 2017</div>
+									<div class="news__img">
+										<img src="../images/news_0<%=i %>.jpg" alt="" />
+									</div>
+									<div class="news__title">Винодельня "Chateau Cotes de Saint Daniel" предоставила нам свою продукцию урожая 2013 года</div>
+									<div class="news__txt">Анонс новости в несколько строк. Виноградники расположены на крутых склонах, что позволяет обеспечить оптимальную освещенность лозы. </div>
+								</div>
+								<%	}	%>
+						</div>
+						<div class="news__link"><a href="#" class="with-arrow">Прошедшие события</a></div>
+					</div>
+				</div>
+			</div>
+			<!-- MAP -->
+			<div class="map-wrapper">
+				<div class="map" id="map"></div>
+				<div class="map-contacts"></div>
+			</div>
+
 		</div>
 		<footer class="footer">
 			<div class="container">
-				<div class="row">
-					<div class="col-xs-6">
-						<div class="copyright">© Lorem ipsum dolor sit amet. 2017</div>
-					</div>
-					<div class="col-xs-6">
-						<a href="http://infodesign.ru/" class="infodisign">© Создание сайта и дизайн «Инфодизайн» 2017</a>
-					</div>
+				<div class="warning">
+
 				</div>
+				<div class="copyright">© ООО «ЛРВ» 2017</div>
+				<a href="http://infodesign.ru/" class="infodisign">© Разработка и дизайн сайта «ИнфоДизайн» 2017</a>
 			</div>
 		</footer>
 		<button href="#" class="scrollup">Наверх</button>
 	</div>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </body>
 
 </html>

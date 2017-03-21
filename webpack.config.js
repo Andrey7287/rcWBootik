@@ -5,7 +5,7 @@ const webpack = require('webpack'),
 			SpritesmithPlugin = require('webpack-spritesmith');
 			nodeEnv = process.env.NODE_ENV || 'development',
 			isProd = nodeEnv === 'production',
-			pages = ['index', 'inner', 'contacts'];
+			pages = ['index', 'catalog', 'card'];//, 'tasting', 'cabinet', 'cabinet-edit'];
 
 const extractCSS = new ExtractTextPlugin({
 	filename: '../style.css',
@@ -144,17 +144,18 @@ module.exports = {
 	resolve: {
 		extensions: ['.js'],
 		modules: [
+			path.resolve('%AppData%/npm/node_modules'),
 			'node_modules',
 			'spritesmith-generated'
 		]
 	},
 	plugins: plugins,
 	devServer: {
-		open: true,
-    historyApiFallback: true,
-    port: 3000,
-    hot: true,
-    stats: { colors: true },
-  }
+		open: false,
+		historyApiFallback: true,
+		port: 3000,
+		hot: true,
+		stats: { colors: true },
+	}
 
 };
