@@ -1,0 +1,124 @@
+/* TOP IMG */
+.top-img {
+	@each $i in catalog {
+		background: url(../images/top-#{$i}.jpg) 0 0 no-repeat;
+	}
+}
+
+/* TOP BORDERED TEXT */
+.top-txt {
+	@include border(18, bb);
+	margin: 43px 0;
+	&__inner {
+		margin: 7px;
+		padding: 22px;
+		background: rgba(56,25,6,.66);
+	}
+	.txt {
+		color: #fff;
+		text-transform: uppercase;
+		text-align: center;
+		&__title {
+			@include font(54,60,700,$font: $pt-serif);
+			border-bottom: 2px solid #fff;
+			padding-bottom: 20px;
+			span {
+				@include font(36,40,700,54,$pt-serif);
+				display: block;
+			}
+		}
+		&__about {
+			@include font(20,34);
+			margin: 12px 0;
+		}
+	}
+}
+/*ABOUT*/
+.main-about-outer {
+	background: #fff;
+	padding: 42px 0;
+}
+.main-about {
+	@include layout(table);
+	&__item {
+		&:first-child {
+			vertical-align: bottom;
+			padding-right: 30px;
+			p {
+				@include font(18,30);
+				color: $grey;
+				&:first-child {
+					margin-top: 0
+				}
+				&:last-child {
+					margin-bottom: 0
+				}
+			}
+		}
+		&:last-child {
+			width: 300px;
+		}
+		.card-shadow {
+			position: relative;
+			right: 68px;
+			margin: 10px 0 12px;
+		}
+	}
+}
+/* CATALOG */
+.main-catalog {
+	padding: 25px 0 40px;
+	&__filter {
+		ul {
+			text-align: center;
+			a {
+				margin: 5px 8px;
+			}
+		}
+	}
+	.catalog {
+		margin: 15px 0 20px;
+	}
+	&__link {
+		text-align: right;
+	}
+}
+
+/* NEWS */
+
+.main-news {
+	background: #fff;
+	padding: 25px 0 60px;
+	&__link {
+		margin-top: 30px;
+		text-align: right;
+	}
+}
+
+.news {
+	&__date {
+		@include font(20,22,700);
+		color: #cac0a4;
+		margin: 15px 0 10px;
+	}
+	&__link {
+		@include font(18);
+		border: 0;
+		img {
+			transition: all 0.3s ease-in;
+		}
+		span {
+			display: block;
+			margin: 20px 0 10px;
+		}
+		&:hover {
+			border: 0;
+			img {
+				opacity: 0.8;
+			}
+		}
+	}
+	&__txt {
+		margin: 1px 0;
+	}
+}

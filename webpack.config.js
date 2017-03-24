@@ -144,7 +144,6 @@ module.exports = {
 	resolve: {
 		extensions: ['.js'],
 		modules: [
-			path.resolve('%AppData%/npm/node_modules'),
 			'node_modules',
 			'spritesmith-generated'
 		]
@@ -153,7 +152,7 @@ module.exports = {
 	devServer: {
 		open: false,
 		historyApiFallback: true,
-		port: 3000,
+		port: 4000,
 		hot: true,
 		stats: { colors: true },
 	}

@@ -1,5 +1,5 @@
 .map {
-	height: 470px;
+	height: 425px;
 	@include breakpoint (mobile){
 		height: 350px;
 	}
@@ -7,5 +7,46 @@
 
 .map-wrapper {
 	position: relative;
+	.map-inner {
+		@include aligner;
+	}
 }
 
+.map-contacts-wrapp {
+	@include border(18, br);
+}
+
+.map-contacts {
+	background: rgba(255,239,206,.8);
+	margin: 7px;
+	padding: 24px;
+	text-align: center;
+	.h1 {
+		text-transform: uppercase;
+		margin: 2px 0;
+	}
+	&__h {
+		@include font(26,30,700,$font: $pt-serif);
+		color: $red;
+		position: relative;
+		padding-bottom: 22px;
+		margin-bottom: 15px;
+		&::after {
+			content: " ";
+			display: block;
+			height: 2px;
+			background: #800903;
+			position: absolute;
+			bottom: 0;
+			left: 30px;
+			right: 30px;
+		}
+	}
+	&__txt {
+		@include font(18,28);
+	}
+	&__phone {
+		@include font(24);
+		margin-top: 10px;
+	}
+}

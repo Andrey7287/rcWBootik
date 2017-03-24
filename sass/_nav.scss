@@ -1,9 +1,62 @@
-nav {
+.menu-panel {
+	background: #fff
+}
+.menu-outer {
 	position: relative;
+	margin: 0 -18px;
 }
 .site-nav {
 	@include layout(table);
 	@include breakpoint(mobile){
 		@include layout(block);
+	}
+	&__item {
+		&:last-child {
+			text-align: right;
+		}
+	}
+	a {
+		@include font(14,16,700,$font: $pt-serif);
+		color: $dark;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 25px 18px;
+		border: 0;
+		transition: all 0.3s ease-in;
+		position: relative;
+		&::after,
+		&::before {
+			content: " ";
+			position: absolute;
+			left: 0;
+			right: 0;
+			transition: all 0.3s ease-in;
+			background: #fff;
+			z-index: 5;
+		}
+		&::after {
+			bottom: 0;
+			height: 9px;
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+
+		&::before {
+			bottom: 3px;
+			height: 0;
+		}
+		&:hover {
+			background: #ac221b;
+			color: #fff;
+			&::after {
+				bottom: -9px;
+				background: #800903;
+			}
+			&::before {
+				height: 2px;
+				background: #800903;
+			}
+		}
+
 	}
 }

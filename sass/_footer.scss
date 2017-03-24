@@ -1,8 +1,20 @@
 .footer {
-	background: $bkg-footer;
-	padding: 25px 0;
-	.infodisign {
-		display: block;
-		text-align: right;
+	padding: 10px 0 25px;
+	@include font(14,18);
+	color: #a78c68;
+	text-align: center;
+	&__warning {
+		color: #fff;
+		text-transform: uppercase;
+		@include font(28,32,700,14);
+		margin-bottom: 15px;
+	}
+	a {
+		color: #a78c68;
+		border: 0;
+		&:hover {
+			border: 0;
+			text-decoration: underline;
+		}
 	}
 }

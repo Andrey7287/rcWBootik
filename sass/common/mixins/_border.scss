@@ -1,0 +1,48 @@
+@mixin border($depth, $prefix, $hover: "none", $bkg: transparent) {
+	transition: background 0.3s ease-in;
+	padding: #{$depth}px 0;
+	position: relative;
+	background: url(../images/#{$prefix}-top-left.png) left top no-repeat, url(../images/#{$prefix}-top-right.png) right top no-repeat, url(../images/#{$prefix}-bottom-right.png) right bottom no-repeat, url(../images/#{$prefix}-bottom-left.png) left bottom no-repeat, $bkg;
+	border-radius: 5px;
+	&::before,
+	&::after {
+		content: " ";
+		display: block;
+		height: #{$depth}px;
+		position: absolute;
+		left: #{$depth}px;
+		right: #{$depth}px;
+		transition: background 0.3s ease-in;
+	}
+	&::before {
+		top: 0;
+		background-image: url(../images/#{$prefix}-top.png);
+	}
+	&::after {
+		bottom: 0;
+		background-image: url(../images/#{$prefix}-bottom.png);
+	}
+	.bordered-inner {
+		background: url(../images/#{$prefix}-left.png) left top repeat-y, url(../images/#{$prefix}-right.png) right top repeat-y;
+		padding: 0 #{$depth}px;
+		height: 100%;
+		overflow: hidden;
+		transition: background 0.3s ease-in;
+	}
+	@if $hover == hover {
+
+		&:hover {
+			background: url(../images/#{$prefix}-top-left-hov.png) left top no-repeat, url(../images/#{$prefix}-top-right-hov.png) right top no-repeat, url(../images/#{$prefix}-bottom-right-hov.png) right bottom no-repeat, url(../images/#{$prefix}-bottom-left-hov.png) left bottom no-repeat, $bkg;
+			&::before {
+				background-image: url(../images/#{$prefix}-top-hov.png);
+			}
+			&::after {
+				background-image: url(../images/#{$prefix}-bottom-hov.png);
+			}
+			.bordered-inner {
+			background: url(../images/#{$prefix}-left-hov.png) left top repeat-y, url(../images/#{$prefix}-right-hov.png) right top repeat-y;
+			}
+		}
+
+	}
+}

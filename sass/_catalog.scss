@@ -1,0 +1,43 @@
+.catalog {
+	.card {
+		height: 100%;
+		padding: 10px;
+		@include layout(table);
+		&__item {
+			&:last-child {
+				vertical-align: top;
+				padding-left: 15px;
+			}
+		}
+		img {
+			max-width: inherit;
+		}
+		h4 {
+			margin-top: 60px;
+			margin-bottom: 10px;
+			color: #5d3d14;
+			transition: all 0.3s ease-in;
+		}
+		span {
+			color: #876e4d;
+			@include font(16,22);
+			transition: all 0.3s ease-in;
+		}
+	}
+	&__item {
+		border: 0;
+		display: block;
+		margin: 14px 0;
+		@include border(7, bs, hover, #fff);
+		&:hover,
+		&:active {
+			border: 0;
+			h4 {
+				color: $red;
+			}
+			span {
+				color: $default-color;
+			}
+		}
+	}
+}

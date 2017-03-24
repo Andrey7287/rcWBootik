@@ -1,13 +1,16 @@
 
 .slider-wrapp {
 	position: relative;
-	max-width: 1200px;
+	max-width: 1400px;
 	margin: 0 auto;
 }
 /**** SLIDER ****/
 .slider {
 	&__item {
 		position: relative;
+	}
+	&__inner {
+		@include aligner;
 	}
 }
 /**** ARROWS ****/
@@ -17,7 +20,7 @@
 	padding: 0;
 	border: 0;
 	line-height: 0;
-	top: calc(50% - 26px);
+	top: calc(50% - 30px);
 	background-color: transparent;
 	&:hover {
 		cursor: pointer;
@@ -34,7 +37,7 @@
 /**** DOTS ****/
 .slider-dots {
 	position: absolute;
-	bottom: 15px;
+	bottom: -40px;
 	left: 0;
 	right: 0;
 	text-align: center;

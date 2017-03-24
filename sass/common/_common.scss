@@ -17,6 +17,7 @@
 }
 
 body {
+	font-family: $default-font;
 	font-size: #{$base-font-size}px;
 	line-height: #{$base-line-height}px;
 	color: $default-color;
@@ -63,20 +64,48 @@ textarea {
 
 a {
 	@include link;
-	color: $link;
-	transition: 0.2s;
-	text-decoration: underline;
-	display: inline-block;
-	&:hover,
-	&:focus {
-		color: $link-hov;
-		text-decoration: none;
-	}
-	&:focus {
-		outline: none;
-	}
 	&[href^="mailto"]{
-		//@include link(#004b62);
+
+	}
+	&.with-arrow {
+		@include font(18,30);
+		margin-right: 25px;
+		position: relative;
+		white-space: nowrap;
+		float: right;
+		border: 0;
+		&::after {
+			content: " ";
+			position: absolute;
+			top: 13px;
+			right: -25px;
+			@include sprite($ico-arrow);
+		}
+		&:hover {
+			border: 0;
+			text-decoration: underline;
+			&::after {
+				@include sprite($ico-arrow-hov);
+			}
+		}
+	}
+	&.with-big-arrow {
+		@include font(24,29,$font: $pt-serif);
+		position: relative;
+		margin-right: 28px;
+		border: 0;
+		color: #800903;
+		&::after {
+			content: " ";
+			position: absolute;
+			top: 13px;
+			right: -28px;
+			@include sprite($ico-arrow-big);
+		}
+		&:hover {
+			border: 0;
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -90,28 +119,41 @@ img {
 //Buttons
 
 // Headers
+body h1, .h1,
+body h1, .h1,
+body h1, .h1,
+body h1, .h1 {
+	color: $header;
+}
 
 body h1, .h1 {
-	@include font(50, 54, 700);
-	color: $header;
+	@include font(42, 44, 700, $font: $pt-serif);
 	margin: 18px 0;
 	text-align: center;
 	@include breakpoint(mobile){
-		@include font(36, 38, 700);
+		@include font(36, 38);
 	}
 }
 body h2, .h2 {
-	@include font(30, 32, 700);
-	color: $header;
+	@include font(38, 40, 700, $font: $pt-serif);
 	margin: 15px 0;
+	@include breakpoint(mobile){
+		@include font(32, 34);
+	}
 }
 body h3, .h3 {
-	@include font(20, 24, 700);
-	color: $header;
+	@include font(30, 32, 700, $font: $pt-serif);
 	margin: 10px 0;
+	@include breakpoint(mobile){
+		@include font(28, 30);
+	}
 }
-body h4, .h4, body h5, .h5 {
-	color: $header;
+body h4, .h4 {
+	@include font(22, 26, $font: $pt-serif);
+	margin: 10px 0;
+	@include breakpoint(mobile){
+		@include font(18, 22);
+	}
 }
 
 .inner {
@@ -120,15 +162,13 @@ body h4, .h4, body h5, .h5 {
 	}
 }
 
-.sub-h {
-	@include font(15, 28);
-	color: $grey;
-	text-align: center;
-}
-
 //Lists
-
-.inner ul {
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.anyselector ul {
 	margin: 7px 0;
 	padding: 0;
 	list-style: none;
@@ -195,5 +235,39 @@ table {
 				padding-left: 10px;
 			}
 		}
+	}
+}
+address,
+cite,
+em {
+	font-style: normal;
+}
+
+.tags {
+	li {
+		display: inline-block;
+	}
+	&__item {
+		border: 0;
+		@include font(20, 32);
+		padding: 0 0.6em;
+		border-radius: 3px;
+		background: #fff;
+		transition: al 0.3s ease-in;
+		color: #855e32;
+		&:hover,
+		&--act {
+			border: 0;
+			background: $red;
+			color: #fff;
+		}
+	}
+	&--lv1 {
+		a {
+			font-weight: 700;
+		}
+	}
+	&--lv3 {
+		font-size: 0.8em;
 	}
 }

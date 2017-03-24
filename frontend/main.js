@@ -9,6 +9,7 @@ window.jQuery = $;
 import '../sass/css.scss';
 import OnResize from './modules/resize';
 import scrollup from './modules/scrollup';
+import ravno from './modules/ravno';
 
 /* Define project components and variables */
 var	isMap = $('#map').is('#map'),
@@ -92,3 +93,11 @@ $(document).scroll(function(){
 });
 
 $('.scrollup').scrollUp();
+/************************
+******* Scroll Up *******
+*************************/
+
+$(window).on('load', function(){
+	$('.catalog__item').ravno();
+});
+
