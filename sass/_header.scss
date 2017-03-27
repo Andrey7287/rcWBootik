@@ -4,6 +4,9 @@
 }
 .search {
 	position: relative;
+	@include breakpoint(mobile) {
+		line-height: 1;
+	}
 	&__input {
 		padding: 0 30px 0 10px;
 		background: #fff;
@@ -20,6 +23,11 @@
 		text-indent: -9999px;
 		background: none;
 		@include sprite($ico-search);
+		@include breakpoint(mobile){
+			right: 0;
+			position: static;
+			margin-top: 4px;
+		}
 	}
 }
 
@@ -31,8 +39,15 @@
 		text-decoration: none;
 		border: 0;
 		margin-left: 10px;
+		@include breakpoint(mobile) {
+			margin-left: 4px;
+		}
 		&:first-child {
 			margin-left:0;
+			@include breakpoint(mobile) {
+				position: relative;
+				left: -2px;
+			}
 		}
 		&--fb {
 			@include sprite($ico-fb);
@@ -69,15 +84,25 @@
 	@include breakpoint(tablet) {
 		padding: 15px 0;
 	}
+	@include breakpoint(mobile){
+		@include layout(block);
+	}
 	.site-logo {
 		border: 0;
 	}
 	address {
 		text-align: right;
+		@include breakpoint(mobile){
+			text-align: left;
+		}
 		.contacts {
 			padding-left: 30px;
 			@include breakpoint(tablet){
 				font-size: 0.9em;
+			}
+			@include breakpoint(mobile) {
+				padding-left: 0;
+				font-size: 0.75em;
 			}
 			&__phone {
 				color: $dark;
@@ -91,6 +116,9 @@
 			&__time {
 				@include font(16,22);
 				color: #847669;
+				@include breakpoint(mobile){
+					@include font(22);
+				}
 			}
 		}
 	}

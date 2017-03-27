@@ -2,7 +2,7 @@
 	background: #fff
 }
 .menu-outer {
-	position: relative;
+	//position: relative;
 	margin: 0 -18px;
 }
 .site-nav {
@@ -34,6 +34,9 @@
 			font-weight: 400;
 			padding: 10px 7px;
 		}
+		@include breakpoint(mobile) {
+			border-bottom: 1px solid $red;
+		}
 		&::after,
 		&::before {
 			content: " ";
@@ -43,6 +46,9 @@
 			transition: all 0.3s ease-in;
 			background: #fff;
 			z-index: 5;
+			@include breakpoint(mobile){
+				display: none;
+			}
 		}
 		&::after {
 			bottom: 0;

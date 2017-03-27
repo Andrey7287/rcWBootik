@@ -1,6 +1,10 @@
 .catalog {
-	@include clearfix;
+	position: relative;
 	margin-bottom: 20px;
+	@include clearfix;
+	@include breakpoint(mobile){
+		padding: 0 8.33333%;
+	}
 	.card {
 		height: 100%;
 		padding: 10px;
@@ -32,7 +36,8 @@
 		margin: 14px 0;
 		@include border(7, bs, hover, #fff);
 		&:hover,
-		&:active {
+		&:active,
+		&:focus {
 			border: 0;
 			h4 {
 				color: $red;

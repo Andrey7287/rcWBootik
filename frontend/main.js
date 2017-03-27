@@ -4,6 +4,7 @@
 console.log(`jQuery ${$.fn.jquery} is loaded`);
 window.$ = $;
 window.jQuery = $;
+require('script-loader!slick-carousel');
 
 /* Import project styles and components */
 import '../sass/css.scss';
@@ -16,6 +17,7 @@ var	isMap = $('#map').is('#map'),
 		isSlider = $('.slider').is('.slider'),
 		mobileView = window.matchMedia("(max-width: 768px)").matches,
 		resizeAlign = new OnResize,
+		resizeMobSlider = new OnResize,
 		scrollTiming = 0,
 		scrollTimingH = 0;
 
@@ -60,17 +62,54 @@ if ( isMap ) {
 
 if ( isSlider ) {
 
-	require.ensure([], (require) => {
-		require('script-loader!slick-carousel/slick/slick.js');
-		$('.slider').slick({
-			prevArrow: $('.slider-arrow.left'),
-			nextArrow: $('.slider-arrow.right'),
-			dots: true,
-			appendDots: $('.slider-dots')
-		});
-	}, 'slick');
+	$('.slider').slick({
+		prevArrow: $('.slider-arrow.left'),
+		nextArrow: $('.slider-arrow.right'),
+		dots: true,
+		appendDots: $('.slider-dots')
+	});
 
 }
+function makeMobSlider(){
+
+	var mobileView = window.matchMedia("(max-width: 768px)").matches, //.is('.mob-slider')
+			$slider = $('.mob-slider'),
+			isSlider = $slider.is('.mob-slider'),
+			inited = $slider.is('.slick-initialized');
+
+	if ( isSlider && !inited && mobileView ) {
+
+		$slider.slick({
+			prevArrow: $('.slider-arrow.prev'),
+			nextArrow: $('.slider-arrow.next'),
+			slidesToShow: 2,
+			responsive: [{
+
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 2,
+				}
+
+			},{
+
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					dots: true
+				}
+
+			}]
+		});
+
+	} else if ( isSlider && inited && !mobileView ) {
+		console.log('!')
+		$slider.slick('unslick');
+
+	}
+
+}
+//makeMobSlider()
+resizeMobSlider.bind(makeMobSlider);
 
 /************************
 ******* Scroll Up *******

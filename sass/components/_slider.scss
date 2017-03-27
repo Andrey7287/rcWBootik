@@ -25,13 +25,33 @@
 	&:hover {
 		cursor: pointer;
 	}
-	&.left {
+	&.left,
+	&.prev{
 		left: 13px;
 		@include sprite($arrow_left);
+		@include breakpoint(small){
+			left: 6px;
+		}
 	}
-	&.right {
+	&.right,
+	&.next{
 		right: 13px;
 		@include sprite($arrow_right);
+		@include breakpoint(small){
+			right: 6px;
+		}
+	}
+	&.prev {
+		left: 0;
+		@include breakpoint(small){
+			left: -12px;
+		}
+	}
+	&.next {
+		right: 0;
+		@include breakpoint(small){
+			right: -12px;
+		}
 	}
 }
 /**** DOTS ****/

@@ -128,21 +128,21 @@ body h1, .h1 {
 	margin: 18px 0;
 	text-align: center;
 	@include breakpoint(mobile){
-		@include font(36, 38);
+		@include font(36, 38, 700, $font: $pt-serif);
 	}
 }
 body h2, .h2 {
 	@include font(38, 40, 700, $font: $pt-serif);
 	margin: 15px 0;
 	@include breakpoint(mobile){
-		@include font(32, 34);
+		@include font(32, 34, 700, $font: $pt-serif);
 	}
 }
 body h3, .h3 {
 	@include font(30, 32, 700, $font: $pt-serif);
 	margin: 10px 0;
 	@include breakpoint(mobile){
-		@include font(28, 30);
+		@include font(28, 30, 700, $font: $pt-serif);
 	}
 }
 body h4, .h4 {

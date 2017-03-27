@@ -24,8 +24,8 @@ $button-transistion-duration: 0.3s;     // The transition duration
 	z-index: 100;
 	@include breakpoint (mobile) {
 		display: block;
-		position: fixed;
-		top: 15px;
+		position: absolute;
+		top: 3px;
 		right: 15px;
 		.scroll &{
 			top: 3px;
