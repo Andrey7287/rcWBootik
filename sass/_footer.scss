@@ -8,6 +8,9 @@
 		text-transform: uppercase;
 		@include font(28,32,700,14);
 		margin-bottom: 15px;
+		@include breakpoint (tablet) {
+			@include font(22,24,700,14);
+		}
 	}
 	a {
 		color: #a78c68;

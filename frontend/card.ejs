@@ -103,103 +103,139 @@
 				</div>
 			</header>
 			<!-- HEADER end-->
+			<!-- IMG-BLOCK -->
+			<div class="top-img top-img--catalog">
+				<div class="top-img__item">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<div class="top-txt">
+									<div class="bordered-inner">
+										<div class="top-txt__inner">
+											<div class="txt">
+												<div class="txt__title">каталог<span>продукции</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!--  breadcrumbs -->
 			<div class="container">
 				<div class="breadcrumbs">
-					<a class="breadcrumbs__item" href="#">Главная</a>
-					<a class="breadcrumbs__item" href="#">Каталог</a>
+					<a class="breadcrumbs__item" href="#">Главная</a>|
+					<a class="breadcrumbs__item" href="#">Каталог</a>|
 					<span class="breadcrumbs__item">Товар каталога</span>
 				</div>
 			</div>
 
 
-			<div class="main-catalog">
-				<div class="container">
-					<div class="h1">Ассортимент бутика</div>
-					<div class="main-catalog__filter">
-						<div class="tags tags--lv2">
-							<ul>
-								<li><a href="" class="tags__item tags__item--act">Вино тихое</a></li>
-								<li><a href="" class="tags__item">Шампанское</a></li>
-								<li><a href="" class="tags__item">Вино игристое</a></li>
-								<li><a href="" class="tags__item">Винные напитки</a></li>
-							</ul>
-						</div>
-						<div class="tags tags--lv3">
-							<ul>
-								<li><a href="" class="tags__item">Белое</a></li>
-								<li><a href="" class="tags__item">Красное</a></li>
-								<li><a href="" class="tags__item">Розовое</a></li>
-								<li><a href="" class="tags__item">Сухое</a></li>
-								<li><a href="" class="tags__item">Полусухое</a></li>
-								<li><a href="" class="tags__item">Полусладкое</a></li>
-								<li><a href="" class="tags__item">Десертное</a></li>
-							</ul>
-						</div>
-						<div class="tags tags--lv3">
-							<ul>
-								<li><a href="" class="tags__item">Европа</a></li>
-								<li><a href="" class="tags__item tags__item--act">Россия</a></li>
-								<li><a href="" class="tags__item">Новый свет</a></li>
-							</ul>
-						</div>
-						<div class="tags tags--lv1">
-							<ul>
-								<li><a href="" class="tags__item">Новинки</a></li>
-								<li><a href="" class="tags__item">Рекомендуем</a></li>
-								<li><a href="" class="tags__item">В коллекцию</a></li>
-								<li><a href="" class="tags__item">Подарочные наборы</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="catalog">
-						<!-- Catalo data -->
-						<%
-							var menuItems = [
-								{'Bianco<br />Da Sole': ['Сортовое','столовое','полусладкое','белое','вино']},
-								{'Rosso<br />Da Sole': ['Сортовое','столовое','полусладкое','розове','вино']},
-								{'Vino di<br />Conteria': ['Сортовое','столовое','полусухое','красное','вино']},
-								{'21': ['Сортовое','столовое','полусладкое']},
-								{'Le<br />Caprice': ['Сортовое','столовое','полусладкое']},
-								{'Scarlatto<br />da Sole': ['Сортовое','столовое','полусладкое','белое']},
-								{'Beau<br />Monde': ['Сортовое','столовое','полусладкое','сухое белое']},
-								{'Tramonto': ['Выдержанное','сухое','красное вино']},
-								{'Saint<br />Daniel': ['Сортовое','выдержанное','крепленое','красное','десертное','вино']},
-								{'Forte': ['Сортовое','столовое','полусладкое','белое','вино']},
-								{'Dolce<br />Passione': ['Сортовое','выдержанное','крепленое','белое','десертное','вино']},
-								{'Jannet': ['Сортовое','выдержанное','крепленое','белое','лекерное','вино']},
-							]
-							%>
-							<!-- Catalog template -->
-							<div class="row">
-								<%	menuItems.forEach((item, idx)=>{
-										for (key in item) {	%>
-									<div class="col-md-3">
-										<a class="catalog__item" href="#">
+			<div class="inner"> <!-- <-- Container for inner pages-->
+
+				<div class="inner-catalog">
+
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3">
+								<ul class="left-menu">
+									<% var catalogNav  = ['Тихие вина','Игристые вина','Крепкие напитки','Безалкогольные напитки','Аксессуары','Табачная продукция','Подарочная упаковка','Книги','Подарочные наборы']
+									catalogNav.forEach((i, idx)=>{	%>
+										<li>
+											<a href="#" class="left-menu__item <% if(!idx){ %>left-menu__item--act<% } %>"><%=i %></a>
+										</li>
+									<%	});	%>
+								</ul>
+							</div>
+							<div class="col-md-9">
+								<div class="h1">Vino di Conteria</div>
+
+									<div class="catalog-card">
+										<div class="catalog-card__img">
 											<div class="bordered-inner">
-												<div class="card">
-													<div class="card__item">
-														<img src="images/bottle_<%=++idx %>.png" alt="">
-													</div>
-													<div class="card__item">
-														<h4>
-															<%=key %>
-														</h4>
-														<%	var list = item[key];
-																		list.forEach((item)=>{	%>
-															<span><%=item %></span>
-															<%	})	%>
-													</div>
+												<img src="../images/bottle_1_big.png" alt="" />
+											</div>
+										</div>
+										<div class="catalog-card__descr">
+											<div class="descr-block">
+													<div class="descr-block__title">ВИНО ДИ КОНТЕРИА (Вино из графского поместья) Сортовое столовое полусухое красное вино.</div>
+											</div>
+											<div class="descr-block">
+												<div class="descr-block__props">
+													<span>Объем:	750 мл</span>
+													<span>Спирт: 	13%</span>
+													<span>Сахар: 	10-14 г/л </span>
 												</div>
 											</div>
-										</a>
+											<div class="descr-block">
+												Приготавливается из винограда сорта Саперави, выращенного вблизи Ялты в Крыму. Имеет темно-красный цвет. Оттенки черной смородины и чернослива слаженно дополняют друг друга, сливаясь, в превосходный букет. Имеет полный вкус, насыщенный терпкостью. Заметны необычные приятные нотки сливочно-шоколадных оттенков. Вино с бархатным послевкусием грецкого ореха. Рекомендуем пить охлажденным до 14-16С°
+											</div>
+											<div class="descr-block">
+												<ul class="tags tags--lv3">
+													<li><a href="" class="tags__item">Красное</a></li>
+													<li><a href="" class="tags__item">Полусухое</a></li>
+													<li><a href="" class="tags__item">Россия</a></li>
+													<li><a href="" class="tags__item">Рекомендуем</a></li>
+												</ul>
+											</div>
+											<div class="catalog-card__back">
+												<a href="#" class="with-arrow">Вернуться в Тихие Вина</a>
+											</div>
+										</div>
 									</div>
-									<%	}
-							});	%>
 							</div>
+						</div>
+
+						<div class="see-also">
+							<div class="see-also__title">
+								Вам также может подойти
+							</div>
+							<%	var menuItems = [
+									{'Bianco<br />Da Sole': ['Сортовое','столовое','полусладкое','белое','вино']},
+									{'Rosso<br />Da Sole': ['Сортовое','столовое','полусладкое','розове','вино']},
+									{'Vino di<br />Conteria': ['Сортовое','столовое','полусухое','красное','вино']},
+									{'21': ['Сортовое','столовое','полусладкое']}
+							]	%>
+							<div class="row">
+								<div class="catalog"><%	menuItems.forEach((item, idx)=>{
+											for (key in item) {	%>
+										<div class="col-md-3">
+											<a class="catalog__item" href="#">
+												<div class="bordered-inner">
+													<div class="card">
+														<div class="card__item">
+															<img src="images/bottle_<%=++idx %>.png" alt="">
+														</div>
+														<div class="card__item">
+															<h4>
+																<%=key %>
+															</h4>
+															<%	var list = item[key];
+																			list.forEach((item)=>{	%>
+																<span><%=item %></span>
+																<%	})	%>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<%	}
+								});	%></div>
+							</div>
+						</div>
+
 					</div>
-					<div class="main-catalog__link"><a href="" class="with-big-arrow">В каталог продукции</a></div>
+
 				</div>
+
+				<div class="white-block">
+					<div class="container">
+						<div class="inner__descr">По типам все виноградные вина делятся, согласно принятой во Франции, общеевропейской классификации на две основополагающие группы: игристые и тихие. Группа тихих вин распадается еще на три подгруппы: натуральные, ликерные и ароматизированные. Натуральные тихие вина – это самые простые вина, которые получаются естественным путем: брожением виноградного сока с помощью дрожжей, которые превращают сахар в спирт. Крепость тихих вин колеблется от 8 до 15 градусов. Все столовые вина относятся к этому типу. На базе тихих натуральных делают ликерные (крепленые) и ароматизированные вина. Крепость ликерных - 15-20 градусов. Достигают этого путем добавления в тихое натуральное вино крепкоалкогольных напитков, чаще всего брэнди. К ликерным винам относятся мадера, хересы, портвейны, марсала. Ароматизированные вина получают добавлением в тихие натуральные специй, трав и пряностей и чуточки виноградного спирта. Самые знаменитые ароматизированные вина – вермуты.</div>
+					</div>
+				</div>
+
 			</div>
 
 			<!-- MAP -->

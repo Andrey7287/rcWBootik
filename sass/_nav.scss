@@ -6,11 +6,15 @@
 	margin: 0 -18px;
 }
 .site-nav {
+	@include breakpoint(tablet){
+		font-size: 0.9em;
+	}
 	@include layout(table);
 	@include breakpoint(mobile){
 		@include layout(block);
 	}
 	&__item {
+		height: 100%;
 		&:last-child {
 			text-align: right;
 		}
@@ -24,6 +28,12 @@
 		border: 0;
 		transition: all 0.3s ease-in;
 		position: relative;
+		display: block;
+		height: 100%;
+		@include breakpoint(tablet) {
+			font-weight: 400;
+			padding: 10px 7px;
+		}
 		&::after,
 		&::before {
 			content: " ";

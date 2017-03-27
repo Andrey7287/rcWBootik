@@ -66,12 +66,19 @@
 .header-inner {
 	@include layout(table);
 	padding: 25px 0 30px;
+	@include breakpoint(tablet) {
+		padding: 15px 0;
+	}
 	.site-logo {
 		border: 0;
 	}
 	address {
 		text-align: right;
 		.contacts {
+			padding-left: 30px;
+			@include breakpoint(tablet){
+				font-size: 0.9em;
+			}
 			&__phone {
 				color: $dark;
 				@include font(32,34);
@@ -79,7 +86,7 @@
 			}
 			&__addr {
 				@include font(20,22);
-				color: #56381b;
+				color: $deep-broun;
 			}
 			&__time {
 				@include font(16,22);

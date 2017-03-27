@@ -28,13 +28,11 @@ p {
 		//margin: 0;
 	}
 }
-
-.block {
-	padding: 45px 0;
-	@include breakpoint(mobile) {
-		padding: 15px 0;
-	}
+.white-block {
+	background: #fff;
+	padding: 25px 0;
 }
+
 .wide-block {
 	max-width: 1366px;
 	margin: 0 auto;
@@ -72,7 +70,6 @@ a {
 		margin-right: 25px;
 		position: relative;
 		white-space: nowrap;
-		float: right;
 		border: 0;
 		&::after {
 			content: " ";
@@ -253,9 +250,11 @@ em {
 		padding: 0 0.6em;
 		border-radius: 3px;
 		background: #fff;
-		transition: al 0.3s ease-in;
+		transition: all 0.3s ease-in;
 		color: #855e32;
+		margin: 5px 0.2em;
 		&:hover,
+		&:focus,
 		&--act {
 			border: 0;
 			background: $red;

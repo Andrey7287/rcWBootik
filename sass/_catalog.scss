@@ -1,4 +1,6 @@
 .catalog {
+	@include clearfix;
+	margin-bottom: 20px;
 	.card {
 		height: 100%;
 		padding: 10px;
@@ -19,7 +21,7 @@
 			transition: all 0.3s ease-in;
 		}
 		span {
-			color: #876e4d;
+			color: $broun;
 			@include font(16,22);
 			transition: all 0.3s ease-in;
 		}

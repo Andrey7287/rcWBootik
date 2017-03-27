@@ -1,0 +1,68 @@
+.catalog-card {
+	margin: 33px 0;
+	@include clearfix;
+	&__img {
+		width: 30.5%;
+		margin-right: 4.3%;
+		margin-bottom: 4px;
+		display: inline-block;
+		float: left;
+		text-align: center;
+		@include border(7,bs,$bkg: #fff);
+		img {
+			display: inline;
+			margin: 25px 0;
+		}
+	}
+	&__descr {
+		width: 65.2%;
+		float: left;
+	}
+	&__back {
+		text-align: right;
+		margin-top: 13px;
+	}
+}
+.descr-block {
+	border-top: 1px solid #fff;
+	padding-top: 10px;
+	padding-bottom: 12px;
+	&:first-child {
+		border-top: 0;
+		padding-top: 0;
+		margin-top: -4px;
+	}
+	&__title {
+		@include font(20,26);
+	}
+	&__props {
+		span {
+			color: #997a5c;
+			@include font(20,26);
+			display: block;
+		}
+	}
+	.tags {
+		margin: 0 -10px;
+		&__item {
+			background: #f9eed2;
+			color: #997a5c;
+			border: 1px solid #fff;
+			margin: 5px 10px;
+			&:hover,
+			&:focus,
+			&--act {
+				color: #fff;
+				background: $red;
+			}
+		}
+	}
+}
+.see-also {
+	margin-bottom: 30px;
+	&__title {
+		@include font(24,28,700,$font: $pt-serif);
+		color: $red;
+		margin-bottom: 15px;
+	}
+}
