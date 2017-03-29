@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet" />
 	<link rel="shortcut icon" href="./favicon.ico">
-</head>
+<link href="./js/../style.css" rel="stylesheet"></head>
 
 <body>
 	<div class="body">
@@ -27,18 +27,17 @@
 							</div>
 							<div class="col-sm-2 col-xs-3">
 								<!-- Social template -->
-								<% var social = [
-									{fb: "facebook"},
-									{in: "instagram"}
-								] %>
+
 									<div class="soc">
-										<%	social.forEach((item)=>{
-											for (key in item) { %>
-											<a href="www.<%= item[key] %>.com" class="soc__item soc__item--<%= key %>">
-												<%= item[key] %>
+
+											<a href="www.facebook.com" class="soc__item soc__item--fb">
+												facebook
 											</a>
-											<%	}
-										}); %>
+
+											<a href="www.instagram.com" class="soc__item soc__item--in">
+												instagram
+											</a>
+
 
 									</div>
 							</div>
@@ -76,26 +75,40 @@
 						<nav id="siteMenu" class="menu-outer">
 
 							<!-- Site menu data -->
-							<%
-							var menuItems = [
-								{'о&nbsp;винном бутике': '#about'},
-								{'каталог продукции': '\catalog.html'},
-								{'дегустации': '\tasting.html'},
-								{'акции и программы лояльности': '#promo'},
-								{'оптовикам': '\opt.html' }
-							]
-							%>
+
 								<!-- Site menu template -->
 								<ul class="site-nav">
-									<%	menuItems.forEach((item, idx)=>{
-										for (key in item) { %>
-										<li class="site-nav__item<% if(!idx){ %> site-nav__item--act<%}%>">
-											<a href="<%=item[key] %>">
-												<%=key %>
+
+										<li class="site-nav__item site-nav__item--act">
+											<a href="#about">
+												о&nbsp;винном бутике
 											</a>
 										</li>
-										<%	}
-							});	%>
+
+										<li class="site-nav__item">
+											<a href="catalog.html">
+												каталог продукции
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="	asting.html">
+												дегустации
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="#promo">
+												акции и программы лояльности
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="opt.html">
+												оптовикам
+											</a>
+										</li>
+
 								</ul>
 						</nav>
 
@@ -153,12 +166,43 @@
 										<span>toggle menu</span>
 									</button>
 									<ul class="left-menu">
-										<% var catalogNav  = ['Тихие вина','Игристые вина','Крепкие напитки','Безалкогольные напитки','Аксессуары','Табачная продукция','Подарочная упаковка','Книги','Подарочные наборы']
-										catalogNav.forEach((i, idx)=>{	%>
+
 											<li>
-												<a href="#" class="left-menu__item <% if(!idx){ %>left-menu__item--act<% } %>"><%=i %></a>
+												<a href="#" class="left-menu__item left-menu__item--act">Тихие вина</a>
 											</li>
-										<%	});	%>
+
+											<li>
+												<a href="#" class="left-menu__item ">Игристые вина</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Крепкие напитки</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Безалкогольные напитки</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Аксессуары</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Табачная продукция</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Подарочная упаковка</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Книги</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Подарочные наборы</a>
+											</li>
+
 									</ul>
 								</div>
 							</div>
@@ -205,38 +249,118 @@
 							<div class="see-also__title">
 								Вам также может подойти
 							</div>
-							<%	var menuItems = [
-									{'Bianco<br />Da Sole': ['Сортовое','столовое','полусладкое','белое','вино']},
-									{'Rosso<br />Da Sole': ['Сортовое','столовое','полусладкое','розове','вино']},
-									{'Vino di<br />Conteria': ['Сортовое','столовое','полусухое','красное','вино']},
-									{'21': ['Сортовое','столовое','полусладкое']}
-							]	%>
+
 							<div class="catalog">
 								<div class="row see-also__slider">
-									<%	menuItems.forEach((item, idx)=>{
-											for (key in item) {	%>
+
 										<div class="col-sm-4">
 											<a class="catalog__item" href="#">
 												<div class="bordered-inner">
 													<div class="card">
 														<div class="card__item">
-															<img src="images/bottle_<%=++idx %>.png" alt="">
+															<img src="images/bottle_1.png" alt="">
 														</div>
 														<div class="card__item">
 															<h4>
-																<%=key %>
+																Bianco<br />Da Sole
 															</h4>
-															<%	var list = item[key];
-																			list.forEach((item)=>{	%>
-																<span><%=item %></span>
-																<%	})	%>
+
+																<span>Сортовое</span>
+
+																<span>столовое</span>
+
+																<span>полусладкое</span>
+
+																<span>белое</span>
+
+																<span>вино</span>
+
 														</div>
 													</div>
 												</div>
 											</a>
 										</div>
-										<%	}
-								});	%>
+
+										<div class="col-sm-4">
+											<a class="catalog__item" href="#">
+												<div class="bordered-inner">
+													<div class="card">
+														<div class="card__item">
+															<img src="images/bottle_2.png" alt="">
+														</div>
+														<div class="card__item">
+															<h4>
+																Rosso<br />Da Sole
+															</h4>
+
+																<span>Сортовое</span>
+
+																<span>столовое</span>
+
+																<span>полусладкое</span>
+
+																<span>розове</span>
+
+																<span>вино</span>
+
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-sm-4">
+											<a class="catalog__item" href="#">
+												<div class="bordered-inner">
+													<div class="card">
+														<div class="card__item">
+															<img src="images/bottle_3.png" alt="">
+														</div>
+														<div class="card__item">
+															<h4>
+																Vino di<br />Conteria
+															</h4>
+
+																<span>Сортовое</span>
+
+																<span>столовое</span>
+
+																<span>полусухое</span>
+
+																<span>красное</span>
+
+																<span>вино</span>
+
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-sm-4">
+											<a class="catalog__item" href="#">
+												<div class="bordered-inner">
+													<div class="card">
+														<div class="card__item">
+															<img src="images/bottle_4.png" alt="">
+														</div>
+														<div class="card__item">
+															<h4>
+																21
+															</h4>
+
+																<span>Сортовое</span>
+
+																<span>столовое</span>
+
+																<span>полусладкое</span>
+
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+
 								</div>
 								<button class="slider-arrow prev">previos</button>
 								<button class="slider-arrow next">next</button>
@@ -295,6 +419,6 @@
 		<button href="#" class="scrollup">Наверх</button>
 	</div>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-</body>
+<script type="text/javascript" src="./js/vendor.bundle.js"></script><script type="text/javascript" src="./js/bundle.js"></script></body>
 
 </html>

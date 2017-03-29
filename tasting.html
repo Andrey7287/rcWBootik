@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet" />
 	<link rel="shortcut icon" href="./favicon.ico">
-</head>
+<link href="./js/../style.css" rel="stylesheet"></head>
 
 <body>
 	<div class="body">
@@ -27,18 +27,17 @@
 							</div>
 							<div class="col-sm-2 col-xs-3">
 								<!-- Social template -->
-								<% var social = [
-									{fb: "facebook"},
-									{in: "instagram"}
-								] %>
+
 									<div class="soc">
-										<%	social.forEach((item)=>{
-											for (key in item) { %>
-											<a href="www.<%= item[key] %>.com" class="soc__item soc__item--<%= key %>">
-												<%= item[key] %>
+
+											<a href="www.facebook.com" class="soc__item soc__item--fb">
+												facebook
 											</a>
-											<%	}
-										}); %>
+
+											<a href="www.instagram.com" class="soc__item soc__item--in">
+												instagram
+											</a>
+
 
 									</div>
 							</div>
@@ -76,26 +75,40 @@
 						<nav id="siteMenu" class="menu-outer">
 
 							<!-- Site menu data -->
-							<%
-							var menuItems = [
-								{'о&nbsp;винном бутике': '#about'},
-								{'каталог продукции': '/catalog.html'},
-								{'дегустации': '/tasting.html'},
-								{'акции и программы лояльности': '#promo'},
-								{'оптовикам': '/opt.html' }
-							]
-							%>
+
 								<!-- Site menu template -->
 								<ul class="site-nav">
-									<%	menuItems.forEach((item, idx)=>{
-										for (key in item) { %>
-										<li class="site-nav__item<% if(!idx){ %> site-nav__item--act<%}%>">
-											<a href="<%=item[key] %>">
-												<%=key %>
+
+										<li class="site-nav__item site-nav__item--act">
+											<a href="#about">
+												о&nbsp;винном бутике
 											</a>
 										</li>
-										<%	}
-							});	%>
+
+										<li class="site-nav__item">
+											<a href="/catalog.html">
+												каталог продукции
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="/tasting.html">
+												дегустации
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="#promo">
+												акции и программы лояльности
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="/opt.html">
+												оптовикам
+											</a>
+										</li>
+
 								</ul>
 						</nav>
 
@@ -146,12 +159,12 @@
 					<h1>Дегустации</h1>
 					<p>Дегустации вин из нашего бутика текст про это.  Вы получите ответы на основные вопросы о производстве, разновидностях и классификации вин разных типов и регионов. Узнаете важные тонкости хранения и сервировки. Разберётесь в хитростях этикеток. Поймёте, как выбрать вино по своему вкусу и в итоге – получить максимум удовольствия от этого великого напитка. Здесь же вы сможете применить новые знания на практике и поделиться своими ощущениями, сомнениями, комментариями. Если Вы новичок – то начнёте с удовольствием разбираться в винах, научитесь выбирать и понимать вино, понимать этикетки, ориентироваться на полке и в винных картах ресторанов. А после – сможете удивить друзей некоторыми хитростями опытных сомелье. </p>
 
-				<%	for(var j = 1; j < 3; j++){	%>
+
 				<div class="event">
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="event__img">
-								<img src="../images/event<%=j %>.jpg" alt="" />
+								<img src="../images/event1.jpg" alt="" />
 							</div>
 							<div class="event__button">
 								<button class="button">записаться на мероприятие</button>
@@ -171,7 +184,32 @@
 						</div>
 					</div>
 				</div>
-				<%	}	%>
+
+				<div class="event">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="event__img">
+								<img src="../images/event2.jpg" alt="" />
+							</div>
+							<div class="event__button">
+								<button class="button">записаться на мероприятие</button>
+							</div>
+						</div>
+						<div class="col-sm-8">
+							<h4 class="event__title">24 марта 2017 года состоится винный ужин, посвященный винам Chateau Cotes de Saint Daniel</h4>
+							<p>
+								<div><span class="marked">2013 BEAU MONDE</span> (Алиготе)</div>
+								<div>Салат с козьим сыром и карамелизированными персиками</div>
+								<div><span class="marked">2013 TRAMONTO</span> (Каберне-Совиньон, Мерло, Саперави)</div>
+								<div>Корейка молодого теленка</div>
+								<div><span class="marked">2015 ROSSO DA SOLE</span> (Мускат розовый)</div>
+								<div>Утиный паштет с ежевичным соусом</div>
+								<div>На десерт нежный сметанник.</div>
+							</p>
+						</div>
+					</div>
+				</div>
+
 				</div>
 			</div>
 
@@ -182,16 +220,34 @@
 				<div class="h1">Прошедшие события</div>
 				<div class="news">
 					<div class="row">
-						<% for( var i = 1; i < 4; i++) {	%>
+
 							<div class="col-sm-4">
 								<div class="news__date">20 января 2017</div>
 								<a href="#" class="news__link">
-										<img src="../images/news_0<%=i %>.jpg" alt="" />
+										<img src="../images/news_01.jpg" alt="" />
 										<span>Винодельня "Chateau Cotes de Saint Daniel" предоставила нам свою продукцию урожая 2013 года</span>
 									</a>
 								<div class="news__txt">Анонс новости в несколько строк. Виноградники расположены на крутых склонах, что позволяет обеспечить оптимальную освещенность лозы. </div>
 							</div>
-							<%	}	%>
+
+							<div class="col-sm-4">
+								<div class="news__date">20 января 2017</div>
+								<a href="#" class="news__link">
+										<img src="../images/news_02.jpg" alt="" />
+										<span>Винодельня "Chateau Cotes de Saint Daniel" предоставила нам свою продукцию урожая 2013 года</span>
+									</a>
+								<div class="news__txt">Анонс новости в несколько строк. Виноградники расположены на крутых склонах, что позволяет обеспечить оптимальную освещенность лозы. </div>
+							</div>
+
+							<div class="col-sm-4">
+								<div class="news__date">20 января 2017</div>
+								<a href="#" class="news__link">
+										<img src="../images/news_03.jpg" alt="" />
+										<span>Винодельня "Chateau Cotes de Saint Daniel" предоставила нам свою продукцию урожая 2013 года</span>
+									</a>
+								<div class="news__txt">Анонс новости в несколько строк. Виноградники расположены на крутых склонах, что позволяет обеспечить оптимальную освещенность лозы. </div>
+							</div>
+
 					</div>
 					<div class="news__all"><a href="#" class="with-arrow">Прошедшие события</a></div>
 				</div>
@@ -238,6 +294,6 @@
 	<button href="#" class="scrollup">Наверх</button>
 	</div>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-</body>
+<script type="text/javascript" src="./js/vendor.bundle.js"></script><script type="text/javascript" src="./js/bundle.js"></script></body>
 
 </html>

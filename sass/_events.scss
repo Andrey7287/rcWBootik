@@ -1,0 +1,25 @@
+.event {
+	padding: 15px 0;
+	border-top: 1px solid #fff;
+	font-size: 1.1em;
+	@include breakpoint(tablet){
+		font-size: 1em;
+	}
+	.button {
+		width: 100%;
+		margin: 20px 0;
+		@include breakpoint(mobile){
+			width: 294px;
+		}
+		@include breakpoint(small){
+			width: auto;
+		}
+	}
+	&__title {
+		color: $red;
+		margin-top: -5px;
+		@include breakpoint(mobile){
+			font-weight: 700;
+		}
+	}
+}

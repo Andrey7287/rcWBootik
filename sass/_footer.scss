@@ -11,6 +11,9 @@
 		@include breakpoint (tablet) {
 			@include font(22,24,700,14);
 		}
+		@include breakpoint (small) {
+			@include font(18,22,700,14);
+		}
 	}
 	a {
 		color: #a78c68;

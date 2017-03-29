@@ -30,6 +30,11 @@
 		font-size: 0.9em;
 		padding: 15px;
 	}
+	@include breakpoint (small) {
+		font-size: 0.75em;
+		margin: 4px;
+		padding: 7px;
+	}
 	.h1 {
 		text-transform: uppercase;
 		margin: 2px 0;

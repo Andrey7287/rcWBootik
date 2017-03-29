@@ -9,11 +9,13 @@
 .content {
 	overflow: hidden;
 }
+body {
+	background: url(../images/bkg-body.jpg);
+}
 .body {
 	max-width: 1920px;
 	margin-left: auto;
 	margin-right: auto;
-	background: url(../images/bkg-body.jpg);
 }
 
 body {
@@ -130,6 +132,9 @@ body h1, .h1 {
 	@include breakpoint(mobile){
 		@include font(36, 38, 700, $font: $pt-serif);
 	}
+	@include breakpoint(small){
+		@include font(32, 34, 700, $font: $pt-serif);
+	}
 }
 body h2, .h2 {
 	@include font(38, 40, 700, $font: $pt-serif);
@@ -137,12 +142,18 @@ body h2, .h2 {
 	@include breakpoint(mobile){
 		@include font(32, 34, 700, $font: $pt-serif);
 	}
+	@include breakpoint(small){
+		@include font(26, 30, 700, $font: $pt-serif);
+	}
 }
 body h3, .h3 {
 	@include font(30, 32, 700, $font: $pt-serif);
 	margin: 10px 0;
 	@include breakpoint(mobile){
 		@include font(28, 30, 700, $font: $pt-serif);
+	}
+	@include breakpoint(small){
+		@include font(22, 24, 700, $font: $pt-serif);
 	}
 }
 body h4, .h4 {
@@ -268,5 +279,23 @@ em {
 	}
 	&--lv3 {
 		font-size: 0.8em;
+	}
+}
+.marked {
+	text-transform: uppercase;
+	color: $red;
+}
+.button {
+	background: $red;
+	padding: 15px 10px;
+	@include font(14.6,14.6,700,$font: $pt-serif);
+	border-radius: 5px;
+	color: #fff;
+	text-transform: uppercase;
+	border: 1px solid $red;
+	transition: all 0.3s ease-in;
+	&:hover {
+		background: #fff;
+		color: $red;
 	}
 }

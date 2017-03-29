@@ -1,7 +1,8 @@
 /* TOP IMG */
 .top-img {
-	@each $i in catalog {
-		background: url(../images/top-#{$i}.jpg) 0 0 no-repeat;
+	position: relative;
+	&__item {
+		@include aligner;
 	}
 }
 
@@ -35,11 +36,7 @@
 		text-align: center;
 		&__title {
 			@include font(54,60,700,$font: $pt-serif);
-			border-bottom: 2px solid #fff;
-			padding-bottom: 20px;
 			@include breakpoint(small) {
-				border-bottom: 1px solid #fff;
-				padding-bottom: 10px;
 				@include font(48,52,700,$font: $pt-serif);
 			}
 			span {

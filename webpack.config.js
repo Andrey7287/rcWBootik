@@ -5,7 +5,7 @@ const webpack = require('webpack'),
 			SpritesmithPlugin = require('webpack-spritesmith');
 			nodeEnv = process.env.NODE_ENV || 'development',
 			isProd = nodeEnv === 'production',
-			pages = ['index', 'catalog', 'card', 'tasting'];//, 'cabinet', 'cabinet-edit'];
+			pages = ['index', 'catalog', 'card', 'tasting', 'cabinet', 'cabinet-edit'];
 
 const extractCSS = new ExtractTextPlugin({
 	filename: '../style.css',

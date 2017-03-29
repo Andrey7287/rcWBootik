@@ -1,12 +1,19 @@
+.header {
+	position: relative;
+	.cabinet-outer {
+		@include breakpoint(mobile) {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
 .top-panel {
 	padding: 5px 0;
 	background: #fff9e9;
 }
 .search {
 	position: relative;
-	@include breakpoint(mobile) {
-		line-height: 1;
-	}
 	&__input {
 		padding: 0 30px 0 10px;
 		background: #fff;
@@ -23,30 +30,29 @@
 		text-indent: -9999px;
 		background: none;
 		@include sprite($ico-search);
-		@include breakpoint(mobile){
-			right: 0;
-			position: static;
-			margin-top: 4px;
-		}
 	}
 }
 
 .soc {
 	line-height: 0;
 	font-size: 0;
+	@include breakpoint(mobile) {
+		margin-top: 3px;
+		text-align: right;
+	}
 	&__item {
 		text-indent: -9999px;
 		text-decoration: none;
 		border: 0;
 		margin-left: 10px;
 		@include breakpoint(mobile) {
-			margin-left: 4px;
+			margin-left: 0;
 		}
 		&:first-child {
 			margin-left:0;
 			@include breakpoint(mobile) {
 				position: relative;
-				left: -2px;
+				left: -12px;
 			}
 		}
 		&--fb {
@@ -69,12 +75,18 @@
 		@include font(16,16);
 		margin-left: 20px;
 		position: relative;
+		@include breakpoint(mobile) {
+			@include font(18,32);
+		}
 		&::before {
 			content: " ";
 			position: absolute;
 			top: 0;
 			left: -20px;
 			@include sprite($ico-key);
+			@include breakpoint(mobile) {
+				top: 7px;
+			}
 		}
 	}
 }

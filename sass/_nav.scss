@@ -1,17 +1,26 @@
 .menu-panel {
-	background: #fff
+	background: #fff;
+	@include breakpoint(mobile) {
+		background: #fff9e9;
+		height: 32px;
+	}
 }
 .menu-outer {
 	//position: relative;
 	margin: 0 -18px;
 }
 .site-nav {
+	@include layout(table);
 	@include breakpoint(tablet){
 		font-size: 0.9em;
 	}
-	@include layout(table);
 	@include breakpoint(mobile){
 		@include layout(block);
+		font-size: 1em;
+		display: none;
+		position: relative;
+		z-index: 1000;
+		background: #fff;
 	}
 	&__item {
 		height: 100%;
@@ -35,7 +44,9 @@
 			padding: 10px 7px;
 		}
 		@include breakpoint(mobile) {
-			border-bottom: 1px solid $red;
+			border-top: 1px solid #f1e9e0;
+			font-weight: 700;
+			margin: 0 15px;
 		}
 		&::after,
 		&::before {

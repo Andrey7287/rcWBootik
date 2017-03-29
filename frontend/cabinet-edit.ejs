@@ -143,7 +143,6 @@
 
 			<div class="inner"> <!-- <-- Container for inner pages-->
 
-				<div class="inner-catalog">
 
 					<div class="container">
 						<div class="row">
@@ -153,106 +152,74 @@
 										<span>toggle menu</span>
 									</button>
 									<ul class="left-menu">
-										<% var catalogNav  = ['Тихие вина','Игристые вина','Крепкие напитки','Безалкогольные напитки','Аксессуары','Табачная продукция','Подарочная упаковка','Книги','Подарочные наборы']
+										<% var catalogNav  = ['Данные покупателя','Редактировать','Мероприятия','Выход']
 										catalogNav.forEach((i, idx)=>{	%>
 											<li>
-												<a href="#" class="left-menu__item <% if(!idx){ %>left-menu__item--act<% } %>"><%=i %></a>
+												<a href="/cabinet-edit.html" class="left-menu__item <% if(!idx){ %>left-menu__item--act<% } %>"><%=i %></a>
 											</li>
 										<%	});	%>
 									</ul>
 								</div>
 							</div>
 							<div class="col-sm-9">
-								<div class="h1">Vino di Conteria</div>
+								<div class="h1">Редактировать личные данные</div>
 
-									<div class="catalog-card">
-										<div class="catalog-card__img">
-											<div class="bordered-inner">
-												<img src="../images/bottle_1_big.png" alt="" />
-											</div>
-										</div>
-										<div class="catalog-card__descr">
-											<div class="descr-block">
-													<div class="descr-block__title">ВИНО ДИ КОНТЕРИА (Вино из графского поместья) Сортовое столовое полусухое красное вино.</div>
-											</div>
-											<div class="descr-block">
-												<div class="descr-block__props">
-													<span>Объем:	750 мл</span>
-													<span>Спирт: 	13%</span>
-													<span>Сахар: 	10-14 г/л </span>
+									<div class="cabinet">
+										<div class="edit">
+											<div class="edit__row">
+												<div class="edit__item">
+													<label for="">Имя</label>
+												</div>
+												<div class="edit__item">
+													<input type="text" value="Константин Константинопольский" />
 												</div>
 											</div>
-											<div class="descr-block">
-												Приготавливается из винограда сорта Саперави, выращенного вблизи Ялты в Крыму. Имеет темно-красный цвет. Оттенки черной смородины и чернослива слаженно дополняют друг друга, сливаясь, в превосходный букет. Имеет полный вкус, насыщенный терпкостью. Заметны необычные приятные нотки сливочно-шоколадных оттенков. Вино с бархатным послевкусием грецкого ореха. Рекомендуем пить охлажденным до 14-16С°
+											<div class="edit__row">
+												<div class="edit__item">
+													<label for="">Телефон</label>
+												</div>
+												<div class="edit__item">
+													<input type="text" value="+7 (000) 000-00-00" />
+												</div>
 											</div>
-											<div class="descr-block">
-												<ul class="tags tags--lv3">
-													<li><a href="" class="tags__item">Красное</a></li>
-													<li><a href="" class="tags__item">Полусухое</a></li>
-													<li><a href="" class="tags__item">Россия</a></li>
-													<li><a href="" class="tags__item">Рекомендуем</a></li>
-												</ul>
+											<div class="edit__row">
+												<div class="edit__item">
+													<label for="">E-mail</label>
+												</div>
+												<div class="edit__item">
+													<input type="text" value="konstantinopolskiy@example.com" >
+												</div>
 											</div>
-											<div class="catalog-card__back">
-												<a href="#" class="with-arrow">Вернуться в Тихие Вина</a>
-											</div>
-										</div>
-									</div>
-							</div>
-						</div>
-
-						<div class="see-also">
-							<div class="see-also__title">
-								Вам также может подойти
-							</div>
-							<%	var menuItems = [
-									{'Bianco<br />Da Sole': ['Сортовое','столовое','полусладкое','белое','вино']},
-									{'Rosso<br />Da Sole': ['Сортовое','столовое','полусладкое','розове','вино']},
-									{'Vino di<br />Conteria': ['Сортовое','столовое','полусухое','красное','вино']},
-									{'21': ['Сортовое','столовое','полусладкое']}
-							]	%>
-							<div class="catalog">
-								<div class="row see-also__slider">
-									<%	menuItems.forEach((item, idx)=>{
-											for (key in item) {	%>
-										<div class="col-sm-4">
-											<a class="catalog__item" href="#">
-												<div class="bordered-inner">
-													<div class="card">
-														<div class="card__item">
-															<img src="images/bottle_<%=++idx %>.png" alt="">
+											<div class="edit__row">
+												<div class="edit__item">
+													<label for="">№ карты</label>
+												</div>
+												<div class="edit__item">
+													<div class="discont">
+														<div class="discont__item">
+															<input type="text">
 														</div>
-														<div class="card__item">
-															<h4>
-																<%=key %>
-															</h4>
-															<%	var list = item[key];
-																			list.forEach((item)=>{	%>
-																<span><%=item %></span>
-																<%	})	%>
+														<div class="discont__item">
+															<a href="#" class="with-arrow">Хочу получить дисконтную карту</a>
 														</div>
 													</div>
 												</div>
-											</a>
+											</div>
 										</div>
-										<%	}
-								});	%>
-								</div>
-								<button class="slider-arrow prev">previos</button>
-								<button class="slider-arrow next">next</button>
+										<div class="subscribe">
+											<input type="checkbox" checked id="agreed01"/>
+											<label for="agreed01">Хочу получать новости Винного Бутика</label>
+											<input type="checkbox" checked id="agreed02"/>
+											<label for="agreed02">Хочу получать приглашения на мероприятия</label>
+										</div>
+										<button class="button">сохранить изменения</button>
+									</div>
+
 							</div>
 						</div>
 
 					</div>
 
-				</div>
-
-			</div>
-
-			<div class="white-block">
-				<div class="container">
-					<div class="inner__descr">По типам все виноградные вина делятся, согласно принятой во Франции, общеевропейской классификации на две основополагающие группы: игристые и тихие. Группа тихих вин распадается еще на три подгруппы: натуральные, ликерные и ароматизированные. Натуральные тихие вина – это самые простые вина, которые получаются естественным путем: брожением виноградного сока с помощью дрожжей, которые превращают сахар в спирт. Крепость тихих вин колеблется от 8 до 15 градусов. Все столовые вина относятся к этому типу. На базе тихих натуральных делают ликерные (крепленые) и ароматизированные вина. Крепость ликерных - 15-20 градусов. Достигают этого путем добавления в тихое натуральное вино крепкоалкогольных напитков, чаще всего брэнди. К ликерным винам относятся мадера, хересы, портвейны, марсала. Ароматизированные вина получают добавлением в тихие натуральные специй, трав и пряностей и чуточки виноградного спирта. Самые знаменитые ароматизированные вина – вермуты.</div>
-				</div>
 			</div>
 
 			<!-- MAP -->

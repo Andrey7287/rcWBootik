@@ -1,6 +1,5 @@
 .catalog {
 	position: relative;
-	margin-bottom: 20px;
 	@include clearfix;
 	@include breakpoint(mobile){
 		padding: 0 8.33333%;
@@ -17,12 +16,18 @@
 		}
 		img {
 			max-width: inherit;
+			@include breakpoint(mobile) {
+				max-height: 168px;
+			}
 		}
 		h4 {
 			margin-top: 60px;
 			margin-bottom: 10px;
 			color: #5d3d14;
 			transition: all 0.3s ease-in;
+			@include breakpoint(mobile) {
+				margin-top: 20px;
+			}
 		}
 		span {
 			color: $broun;

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet" />
+	<link rel="shortcut icon" href="./favicon.ico">
+<link href="./js/../style.css" rel="stylesheet"></head>
+
+<body>
+	<div class="body">
+		<div class="content">
+			<header class="header">
+				<div class="top-panel">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-xs-9">
+								<div class="search">
+									<form action="/search/" method="get">
+										<input class="search__input" type="text" name="q" placeholder="Введите строку для поиска">
+										<input class="search__submit" type="submit" value="найти">
+									</form>
+								</div>
+							</div>
+							<div class="col-sm-2 col-xs-3">
+								<!-- Social template -->
+
+									<div class="soc">
+
+											<a href="www.facebook.com" class="soc__item soc__item--fb">
+												facebook
+											</a>
+
+											<a href="www.instagram.com" class="soc__item soc__item--in">
+												instagram
+											</a>
+
+
+									</div>
+							</div>
+							<div class="col-sm-4 col-xs-8 cabinet-outer">
+								<div class="personal-cabinet">
+									<a href="/cabinet.html">Личный кабинет<span class="hidden-xs"> покупателя</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="header-inner">
+						<div class="header-inner__item">
+							<a href="/" class="site-logo">
+								<img src="images/logo.png" alt="">
+							</a>
+						</div>
+						<div class="header-inner__item">
+							<address>
+								<div class="contacts">
+									<div class="contacts__phone">+7 (495) 792-56-16</div>
+									<div class="contacts__addr">Москва, ул. Садовая-Черногрязская, д.8, стр.7</div>
+									<div class="contacts__time">ежедневно с 10.00 до 21.00</div>
+								</div>
+							</address>
+						</div>
+					</div>
+				</div>
+				<div class="menu-panel">
+					<div class="container">
+						<button class="c-hamburger c-hamburger--htx" id="mainMenuToggle">
+							<span>toggle menu</span>
+						</button>
+						<nav id="siteMenu" class="menu-outer">
+
+							<!-- Site menu data -->
+
+								<!-- Site menu template -->
+								<ul class="site-nav">
+
+										<li class="site-nav__item site-nav__item--act">
+											<a href="#about">
+												о&nbsp;винном бутике
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="/catalog.html">
+												каталог продукции
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="/tasting.html">
+												дегустации
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="#promo">
+												акции и программы лояльности
+											</a>
+										</li>
+
+										<li class="site-nav__item">
+											<a href="/opt.html">
+												оптовикам
+											</a>
+										</li>
+
+								</ul>
+						</nav>
+
+					</div>
+				</div>
+			</header>
+			<!-- HEADER end-->
+
+			<!-- IMG-BLOCK -->
+			<div class="top-img">
+				<div class="top-img__img">
+					<img src="./images/catalog-top.jpg" alt="" />
+				</div>
+				<div class="top-img__item">
+					<div class="aligner">
+						<div class="aligner__item">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3">
+										<div class="top-txt">
+											<div class="bordered-inner">
+												<div class="top-txt__inner">
+													<div class="txt">
+														<div class="txt__title">каталог<span>продукции</span></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--  breadcrumbs -->
+			<div class="container">
+				<div class="breadcrumbs">
+					<a class="breadcrumbs__item" href="#">Главная</a>|
+					<a class="breadcrumbs__item" href="#">Каталог</a>|
+					<span class="breadcrumbs__item">Товар каталога</span>
+				</div>
+			</div>
+
+
+			<div class="inner"> <!-- <-- Container for inner pages-->
+
+				<div class="inner-catalog">
+
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="left-menu-outer">
+									<button class="c-hamburger c-hamburger--htx" id="leftMenuToggle">
+										<span>toggle menu</span>
+									</button>
+									<ul class="left-menu">
+
+											<li>
+												<a href="#" class="left-menu__item left-menu__item--act">Тихие вина</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Игристые вина</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Крепкие напитки</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Безалкогольные напитки</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Аксессуары</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Табачная продукция</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Подарочная упаковка</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Книги</a>
+											</li>
+
+											<li>
+												<a href="#" class="left-menu__item ">Подарочные наборы</a>
+											</li>
+
+									</ul>
+								</div>
+								<div class="catalog-filter">
+									<div class="catalog-filter__title">Выбор по свойствам</div>
+
+										<div class="catalog-filter__category">
+											<div class="catalog-filter__sub-title">Тип:</div>
+											<ul class="tags tags--lv3">
+												<li><a href="" class="tags__item">Сухое </a></li>
+												<li><a href="" class="tags__item">Полусухое</a></li>
+												<li><a href="" class="tags__item ">Полусладкое </a></li>
+												<li><a href="" class="tags__item">Десертное</a></li>
+											</ul>
+										</div>
+
+										<div class="catalog-filter__category">
+											<div class="catalog-filter__sub-title">Тип:</div>
+											<ul class="tags tags--lv3">
+												<li><a href="" class="tags__item">Сухое </a></li>
+												<li><a href="" class="tags__item">Полусухое</a></li>
+												<li><a href="" class="tags__item tags__item--act">Полусладкое </a></li>
+												<li><a href="" class="tags__item">Десертное</a></li>
+											</ul>
+										</div>
+
+										<div class="catalog-filter__category">
+											<div class="catalog-filter__sub-title">Тип:</div>
+											<ul class="tags tags--lv3">
+												<li><a href="" class="tags__item">Сухое </a></li>
+												<li><a href="" class="tags__item">Полусухое</a></li>
+												<li><a href="" class="tags__item ">Полусладкое </a></li>
+												<li><a href="" class="tags__item">Десертное</a></li>
+											</ul>
+										</div>
+
+										<div class="catalog-filter__category">
+											<div class="catalog-filter__sub-title">Тип:</div>
+											<ul class="tags tags--lv3">
+												<li><a href="" class="tags__item">Сухое </a></li>
+												<li><a href="" class="tags__item">Полусухое</a></li>
+												<li><a href="" class="tags__item ">Полусладкое </a></li>
+												<li><a href="" class="tags__item">Десертное</a></li>
+											</ul>
+										</div>
+
+								</div>
+							</div>
+							<div class="col-sm-9">
+								<div class="h1">Тихие вина</div>
+
+									<div class="catalog">
+										<div class="row mob-slider">
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_1.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Bianco<br />Da Sole
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусладкое</span>
+
+																		<span>белое</span>
+
+																		<span>вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_2.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Rosso<br />Da Sole
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусладкое</span>
+
+																		<span>розове</span>
+
+																		<span>вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_3.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Vino di<br />Conteria
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусухое</span>
+
+																		<span>красное</span>
+
+																		<span>вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_4.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		21
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусладкое</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_5.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Le<br />Caprice
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусладкое</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_6.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Scarlatto<br />da Sole
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусладкое</span>
+
+																		<span>белое</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_7.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Beau<br />Monde
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусладкое</span>
+
+																		<span>сухое белое</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_8.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Tramonto
+																	</h4>
+
+																		<span>Выдержанное</span>
+
+																		<span>сухое</span>
+
+																		<span>красное вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_9.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Saint<br />Daniel
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>выдержанное</span>
+
+																		<span>крепленое</span>
+
+																		<span>красное</span>
+
+																		<span>десертное</span>
+
+																		<span>вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_10.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Forte
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>столовое</span>
+
+																		<span>полусладкое</span>
+
+																		<span>белое</span>
+
+																		<span>вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_11.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Dolce<br />Passione
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>выдержанное</span>
+
+																		<span>крепленое</span>
+
+																		<span>белое</span>
+
+																		<span>десертное</span>
+
+																		<span>вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
+														<div class="bordered-inner">
+															<div class="card">
+																<div class="card__item">
+																	<img src="images/bottle_12.png" alt="">
+																</div>
+																<div class="card__item">
+																	<h4>
+																		Jannet
+																	</h4>
+
+																		<span>Сортовое</span>
+
+																		<span>выдержанное</span>
+
+																		<span>крепленое</span>
+
+																		<span>белое</span>
+
+																		<span>лекерное</span>
+
+																		<span>вино</span>
+
+																</div>
+															</div>
+														</div>
+													</a>
+												</div>
+
+										</div>
+										<button class="slider-arrow prev visible-xs">previos</button>
+										<button class="slider-arrow next visible-xs">next</button>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="white-block">
+				<div class="container">
+					<p>По типам все виноградные вина делятся, согласно принятой во Франции, общеевропейской классификации на две основополагающие группы: игристые и тихие. Группа тихих вин распадается еще на три подгруппы: натуральные, ликерные и ароматизированные. Натуральные тихие вина – это самые простые вина, которые получаются естественным путем: брожением виноградного сока с помощью дрожжей, которые превращают сахар в спирт. Крепость тихих вин колеблется от 8 до 15 градусов. Все столовые вина относятся к этому типу. На базе тихих натуральных делают ликерные (крепленые) и ароматизированные вина. Крепость ликерных - 15-20 градусов. Достигают этого путем добавления в тихое натуральное вино крепкоалкогольных напитков, чаще всего брэнди. К ликерным винам относятся мадера, хересы, портвейны, марсала. Ароматизированные вина получают добавлением в тихие натуральные специй, трав и пряностей и чуточки виноградного спирта. Самые знаменитые ароматизированные вина – вермуты.</p>
+				</div>
+			</div>
+
+			<!-- MAP -->
+			<div class="map-wrapper">
+				<div class="map" id="map"></div>
+				<div class="map-inner">
+					<div class="aligner">
+						<div class="aligner__item">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 col-md-offset-6">
+										<div class="map-contacts-wrapp">
+											<div class="bordered-inner">
+												<div class="map-contacts">
+													<div class="h1">винный бутик</div>
+													<div class="map-contacts__h">на Садовой-Черногрязской</div>
+													<div class="map-contacts__txt">ул. Садовая-Черногрязская, д. 8, стр. 7, <br />со стороны Большого Харитоньевского пер.<br /><a href="#">Как добраться и где припарковаться</a></div>
+													<div class="map-contacts__phone">+7 (495) 792-56-16</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__warning">
+					чрезмерное употребление алкоголя вредит вашему здоровью
+				</div>
+				<div class="footer__copyright">© ООО «ЛРВ» 2017</div>
+				<a class="footer__infodesign" href="http://infodesign.ru/" class="infodisign">© Разработка и дизайн сайта «ИнфоДизайн» 2017</a>
+			</div>
+		</footer>
+		<button href="#" class="scrollup">Наверх</button>
+	</div>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script type="text/javascript" src="./js/vendor.bundle.js"></script><script type="text/javascript" src="./js/bundle.js"></script></body>
+
+</html>

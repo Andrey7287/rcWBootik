@@ -14,10 +14,9 @@ import ravno from './modules/ravno';
 
 /* Define project components and variables */
 var	isMap = $('#map').is('#map'),
-		isSlider = $('.slider').is('.slider'),
 		mobileView = window.matchMedia("(max-width: 768px)").matches,
-		resizeAlign = new OnResize,
-		resizeMobSlider = new OnResize,
+		resizeCards = new OnResize(true),
+		resizeCatalog = new OnResize(true),
 		scrollTiming = 0,
 		scrollTimingH = 0;
 
@@ -25,9 +24,14 @@ var	isMap = $('#map').is('#map'),
 ****** Mobile menu ******
 *************************/
 
-$('.c-hamburger').on('click', function(){
+$('#mainMenuToggle').on('click', function(){
 	$(this).toggleClass('is-active');
 	$('.site-nav').slideToggle();
+});
+
+$('#leftMenuToggle').on('click', function(){
+	$(this).toggleClass('is-active');
+	$('.left-menu').slideToggle();
 });
 
 /***********************
@@ -59,57 +63,71 @@ if ( isMap ) {
 ******** SLIDER ********
 ************************/
 
+$('.slider').slick({
+	prevArrow: $('.slider-arrow.left'),
+	nextArrow: $('.slider-arrow.right'),
+	dots: true,
+	appendDots: $('.slider-dots')
+});
 
-if ( isSlider ) {
+$('.see-also__slider').slick({
+	prevArrow: $('.slider-arrow.prev'),
+	nextArrow: $('.slider-arrow.next'),
+	slidesToShow: 3,
+	responsive: [{
+		breakpoint: 767,
+		settings: {
+			slidesToShow: 2,
+		}
+	},{
+		breakpoint: 480,
+		settings: {
+			slidesToShow: 1
+		}
+	}]
+});
 
-	$('.slider').slick({
-		prevArrow: $('.slider-arrow.left'),
-		nextArrow: $('.slider-arrow.right'),
-		dots: true,
-		appendDots: $('.slider-dots')
-	});
+function catalogLayout(){
 
-}
-function makeMobSlider(){
-
-	var mobileView = window.matchMedia("(max-width: 768px)").matches, //.is('.mob-slider')
+	var mobileView = window.matchMedia("(max-width: 768px)").matches,
 			$slider = $('.mob-slider'),
 			isSlider = $slider.is('.mob-slider'),
-			inited = $slider.is('.slick-initialized');
+			isInited = $slider.is('.slick-initialized'),
+			$card = $('.catalog__item');
 
-	if ( isSlider && !inited && mobileView ) {
+	if ( isSlider && !isInited && mobileView ) {
+
+		$card.outerHeight('auto')
 
 		$slider.slick({
 			prevArrow: $('.slider-arrow.prev'),
 			nextArrow: $('.slider-arrow.next'),
 			slidesToShow: 2,
 			responsive: [{
-
 				breakpoint: 767,
 				settings: {
 					slidesToShow: 2,
 				}
-
 			},{
-
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 1,
-					dots: true
+					slidesToShow: 1
 				}
-
 			}]
 		});
 
-	} else if ( isSlider && inited && !mobileView ) {
-		console.log('!')
-		$slider.slick('unslick');
+	} else if ( isSlider  && !mobileView ) {
+
+		if ( isInited ) {
+			$slider.slick('unslick');
+		}
+		$card.ravno();
 
 	}
 
 }
-//makeMobSlider()
-resizeMobSlider.bind(makeMobSlider);
+
+resizeCatalog.bind(catalogLayout);
 
 /************************
 ******* Scroll Up *******
@@ -132,11 +150,7 @@ $(document).scroll(function(){
 });
 
 $('.scrollup').scrollUp();
+
 /************************
-******* Scroll Up *******
+******* Ravno *******
 *************************/
-
-$(window).on('load', function(){
-	$('.catalog__item').ravno();
-});
-

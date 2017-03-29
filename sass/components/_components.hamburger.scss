@@ -24,11 +24,13 @@ $button-transistion-duration: 0.3s;     // The transition duration
 	z-index: 100;
 	@include breakpoint (mobile) {
 		display: block;
-		position: absolute;
-		top: 3px;
-		right: 15px;
-		.scroll &{
-			top: 3px;
+		margin-top: 1px;
+		margin-bottom: 1px;
+		//position: absolute;
+		//top: 3px;
+		//right: 15px;
+		.left-menu-outer & {
+			margin: 1px 0 1px 15px;
 		}
 	}
 	position: relative;

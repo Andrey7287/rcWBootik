@@ -2,6 +2,9 @@
 	margin-top: 30px;
 	color: #bba890;
 	@include font(14, 16);
+	@include breakpoint(mobile){
+		margin-top: 15px;
+	}
 	&__item {
 		color: #bba890;
 		text-decoration: underline;

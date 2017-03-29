@@ -12,6 +12,14 @@
 	&__inner {
 		@include aligner;
 	}
+	.txt__title {
+		border-bottom: 2px solid #fff;
+		padding-bottom: 20px;
+		@include breakpoint(small) {
+			border-bottom: 1px solid #fff;
+			padding-bottom: 10px;
+		}
+	}
 }
 /**** ARROWS ****/
 .slider-arrow {

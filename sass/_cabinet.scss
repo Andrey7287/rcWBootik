@@ -1,0 +1,80 @@
+.cabinet {
+	padding: 10px 0;
+	@include clearfix;
+	&__title {
+		@include font(20,26);
+	}
+	.button {
+		float: right;
+	}
+}
+.cabinet-contact {
+	color: #997a5c;
+	@include font(20,26);
+	@include layout(table);
+	&__row {
+		display: table-row;
+	}
+}
+.cabinet-discont {
+	@include layout(table);
+	.with-arrow {
+		@include font(16);
+		float: right;
+	}
+}
+
+.edit {
+	@include font(20,26);
+	@include layout(table);
+	width: 100%;
+	margin-bottom: 25px;
+	@include breakpoint(tablet) {
+		@include font(17,24);
+		margin-bottom: 45px;
+	}
+	@include breakpoint(small) {
+		@include font(15,22);
+	}
+	&__row {
+		display: table-row;
+	}
+	&__item {
+		padding-bottom: 5px;
+	}
+	input[type=text] {
+		padding: 2px 7px;
+		border: 0;
+		width: 100%;
+	}
+	label {
+		@include breakpoint(tablet){
+			padding-right: 15px;
+		}
+	}
+	.discont {
+		@include layout(table);
+		position: relative;
+		.with-arrow {
+			@include font(16, $context: 20);
+			float: right;
+			@include breakpoint(mobile) {
+				@include font(18, $context: 17);
+				position: absolute;
+				bottom: -30px;
+				right: 0;
+			}
+			&::after {
+				top: 12px;
+				@include breakpoint(tablet) {
+					top: 10px;
+				}
+			}
+		}
+	}
+}
+.subscribe {
+	@include breakpoint(small) {
+		font-size: 0.9em;
+	}
+}

@@ -1,22 +1,53 @@
 .inner {
 	margin-top: 35px;
+	padding-bottom: 20px;
+	@include breakpoint(mobile){
+		margin-top: 15px;
+	}
 	.h1, h1 {
 		margin-top: -8px;
+		@include breakpoint(mobile) {
+			margin-top: 15px;
+		}
 	}
 	&__descr {
 		@include font(19,30);
 		color: $grey;
+		@include breakpoint(small){
+			@include font(16,22);
+		}
 	}
 }
 
+.left-menu-outer {
+	background: #fff;
+	@include breakpoint(mobile) {
+		margin: 0 -15px;
+		overflow: hidden;
+	}
+}
 .left-menu {
 	padding: 5px 15px;
 	background: #fff;
 	margin-left: -15px;
+	@include breakpoint(tablet){
+		font-size: 0.9em;
+	}
+	@include breakpoint(mobile) {
+		margin-left: 0;
+		display: none;
+		padding: 0 15px;
+	}
 	li {
 		border-top: 1px solid #f1e9e0;
+		@include breakpoint(mobile) {
+			text-align: center;
+		}
 		&:first-child {
 			border-top: 0;
+			@include breakpoint(mobile) {
+				border-top: 1px solid #f1e9e0;
+			}
 		}
 	}
 	&__item {
@@ -25,12 +56,11 @@
 		text-transform: uppercase;
 		border: 0;
 		padding: 10px 0;
-		&:hover {
-			border: 0;
-		}
 		&--act,
-		&:hover {
+		&:hover,
+		&:focus {
 			color: $red;
+			border: 0;
 		}
 	}
 }
@@ -41,15 +71,38 @@
 	margin-left: -15px;
 	border: 1px solid #fff;
 	background: #f9eed2;
+	@include breakpoint(tablet){
+		font-size: 0.9em;
+	}
+	@include breakpoint(mobile) {
+		margin-left: 0;
+	}
+	&__category {
+		@include clearfix;
+	}
 	&__title {
 		@include font(18,16,700,$font: $pt-serif);
 		color: $red;
+		@include breakpoint(mobile) {
+			margin-bottom: 15px;
+		}
 	}
 	&__sub-title {
 		color: $broun;
 		margin: 30px 0 10px;
+		@include breakpoint(tablet){
+			margin: 10px 0;
+		}
+		@include breakpoint(mobile){
+			float: left;
+			 margin: 5px 10px 5px 0;
+			line-height: 1.6em;
+		}
 	}
 	.tags {
-		margin: 0 -5px;
+		margin: 0 -12px;
+		@include breakpoint(mobile){
+
+		}
 	}
 }

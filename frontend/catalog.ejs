@@ -17,15 +17,15 @@
 				<div class="top-panel">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-6 col-xs-9">
 								<div class="search">
 									<form action="/search/" method="get">
-										<input class="search__input" type="text" name="q" placeholder="Введите строку для поиска по сайту">
+										<input class="search__input" type="text" name="q" placeholder="Введите строку для поиска">
 										<input class="search__submit" type="submit" value="найти">
 									</form>
 								</div>
 							</div>
-							<div class="col-sm-2">
+							<div class="col-sm-2 col-xs-3">
 								<!-- Social template -->
 								<% var social = [
 									{fb: "facebook"},
@@ -42,9 +42,9 @@
 
 									</div>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4 col-xs-8 cabinet-outer">
 								<div class="personal-cabinet">
-									<a href="/cabinet.html">Личный кабинет покупателя</a>
+									<a href="/cabinet.html">Личный кабинет<span class="hidden-xs"> покупателя</span></a>
 								</div>
 							</div>
 						</div>
@@ -70,19 +70,19 @@
 				</div>
 				<div class="menu-panel">
 					<div class="container">
-
+						<button class="c-hamburger c-hamburger--htx" id="mainMenuToggle">
+							<span>toggle menu</span>
+						</button>
 						<nav id="siteMenu" class="menu-outer">
-							<button class="c-hamburger c-hamburger--htx">
-								<span>toggle menu</span>
-							</button>
+
 							<!-- Site menu data -->
 							<%
 							var menuItems = [
 								{'о&nbsp;винном бутике': '#about'},
-								{'каталог продукции': '\catalog.html'},
-								{'дегустации': '\tasting.html'},
+								{'каталог продукции': '/catalog.html'},
+								{'дегустации': '/tasting.html'},
 								{'акции и программы лояльности': '#promo'},
-								{'оптовикам': '\opt.html' }
+								{'оптовикам': '/opt.html' }
 							]
 							%>
 								<!-- Site menu template -->
@@ -105,16 +105,23 @@
 			<!-- HEADER end-->
 
 			<!-- IMG-BLOCK -->
-			<div class="top-img top-img--catalog">
+			<div class="top-img">
+				<div class="top-img__img">
+					<img src="./images/catalog-top.jpg" alt="" />
+				</div>
 				<div class="top-img__item">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3">
-								<div class="top-txt">
-									<div class="bordered-inner">
-										<div class="top-txt__inner">
-											<div class="txt">
-												<div class="txt__title">каталог<span>продукции</span></div>
+					<div class="aligner">
+						<div class="aligner__item">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3">
+										<div class="top-txt">
+											<div class="bordered-inner">
+												<div class="top-txt__inner">
+													<div class="txt">
+														<div class="txt__title">каталог<span>продукции</span></div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -140,29 +147,36 @@
 
 					<div class="container">
 						<div class="row">
-							<div class="col-md-3">
-								<ul class="left-menu">
-									<% var catalogNav  = ['Тихие вина','Игристые вина','Крепкие напитки','Безалкогольные напитки','Аксессуары','Табачная продукция','Подарочная упаковка','Книги','Подарочные наборы']
-									catalogNav.forEach((i, idx)=>{	%>
-										<li>
-											<a href="#" class="left-menu__item <% if(!idx){ %>left-menu__item--act<% } %>"><%=i %></a>
-										</li>
-									<%	});	%>
-								</ul>
+							<div class="col-sm-3">
+								<div class="left-menu-outer">
+									<button class="c-hamburger c-hamburger--htx" id="leftMenuToggle">
+										<span>toggle menu</span>
+									</button>
+									<ul class="left-menu">
+										<% var catalogNav  = ['Тихие вина','Игристые вина','Крепкие напитки','Безалкогольные напитки','Аксессуары','Табачная продукция','Подарочная упаковка','Книги','Подарочные наборы']
+										catalogNav.forEach((i, idx)=>{	%>
+											<li>
+												<a href="#" class="left-menu__item <% if(!idx){ %>left-menu__item--act<% } %>"><%=i %></a>
+											</li>
+										<%	});	%>
+									</ul>
+								</div>
 								<div class="catalog-filter">
 									<div class="catalog-filter__title">Выбор по свойствам</div>
 									<%	for(var i = 1; i < 5; i++){%>
-										<div class="catalog-filter__sub-title">Тип:</div>
-										<ul class="tags tags--lv3">
-											<li><a href="" class="tags__item">Сухое </a></li>
-											<li><a href="" class="tags__item">Полусухое</a></li>
-											<li><a href="" class="tags__item <% if(i == 2){%>tags__item--act<%}%>">Полусладкое </a></li>
-											<li><a href="" class="tags__item">Десертное</a></li>
-										</ul>
+										<div class="catalog-filter__category">
+											<div class="catalog-filter__sub-title">Тип:</div>
+											<ul class="tags tags--lv3">
+												<li><a href="" class="tags__item">Сухое </a></li>
+												<li><a href="" class="tags__item">Полусухое</a></li>
+												<li><a href="" class="tags__item <% if(i == 2){%>tags__item--act<%}%>">Полусладкое </a></li>
+												<li><a href="" class="tags__item">Десертное</a></li>
+											</ul>
+										</div>
 									<%	}	%>
 								</div>
 							</div>
-							<div class="col-md-9">
+							<div class="col-sm-9">
 								<div class="h1">Тихие вина</div>
 									<%	var menuItems = [
 											{'Bianco<br />Da Sole': ['Сортовое','столовое','полусладкое','белое','вино']},
@@ -178,11 +192,12 @@
 											{'Dolce<br />Passione': ['Сортовое','выдержанное','крепленое','белое','десертное','вино']},
 											{'Jannet': ['Сортовое','выдержанное','крепленое','белое','лекерное','вино']},
 									]	%>
-									<div class="row">
-										<div class="catalog"><%	menuItems.forEach((item, idx)=>{
+									<div class="catalog">
+										<div class="row mob-slider">
+											<%	menuItems.forEach((item, idx)=>{
 													for (key in item) {	%>
-												<div class="col-md-4">
-													<a class="catalog__item" href="#">
+												<div class="col-md-4 col-sm-6">
+													<a class="catalog__item" href="/card.html">
 														<div class="bordered-inner">
 															<div class="card">
 																<div class="card__item">
@@ -202,19 +217,22 @@
 													</a>
 												</div>
 												<%	}
-																				});	%></div>
+										});	%>
+										</div>
+										<button class="slider-arrow prev visible-xs">previos</button>
+										<button class="slider-arrow next visible-xs">next</button>
 									</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="white-block">
-					<div class="container">
-						<p>По типам все виноградные вина делятся, согласно принятой во Франции, общеевропейской классификации на две основополагающие группы: игристые и тихие. Группа тихих вин распадается еще на три подгруппы: натуральные, ликерные и ароматизированные. Натуральные тихие вина – это самые простые вина, которые получаются естественным путем: брожением виноградного сока с помощью дрожжей, которые превращают сахар в спирт. Крепость тихих вин колеблется от 8 до 15 градусов. Все столовые вина относятся к этому типу. На базе тихих натуральных делают ликерные (крепленые) и ароматизированные вина. Крепость ликерных - 15-20 градусов. Достигают этого путем добавления в тихое натуральное вино крепкоалкогольных напитков, чаще всего брэнди. К ликерным винам относятся мадера, хересы, портвейны, марсала. Ароматизированные вина получают добавлением в тихие натуральные специй, трав и пряностей и чуточки виноградного спирта. Самые знаменитые ароматизированные вина – вермуты.</p>
-					</div>
-				</div>
+			</div>
 
+			<div class="white-block">
+				<div class="container">
+					<p>По типам все виноградные вина делятся, согласно принятой во Франции, общеевропейской классификации на две основополагающие группы: игристые и тихие. Группа тихих вин распадается еще на три подгруппы: натуральные, ликерные и ароматизированные. Натуральные тихие вина – это самые простые вина, которые получаются естественным путем: брожением виноградного сока с помощью дрожжей, которые превращают сахар в спирт. Крепость тихих вин колеблется от 8 до 15 градусов. Все столовые вина относятся к этому типу. На базе тихих натуральных делают ликерные (крепленые) и ароматизированные вина. Крепость ликерных - 15-20 градусов. Достигают этого путем добавления в тихое натуральное вино крепкоалкогольных напитков, чаще всего брэнди. К ликерным винам относятся мадера, хересы, портвейны, марсала. Ароматизированные вина получают добавлением в тихие натуральные специй, трав и пряностей и чуточки виноградного спирта. Самые знаменитые ароматизированные вина – вермуты.</p>
+				</div>
 			</div>
 
 			<!-- MAP -->

@@ -1,12 +1,13 @@
 ymaps.ready(init);
 
 var map,
-		marker;
+		marker,
+		mobileView = window.matchMedia("(max-width: 768px)").matches;
 
 function init(){
 
 	map = new ymaps.Map('map', {
-			center: [55.766590, 37.654703],
+			center: mobileView ? [55.766426, 37.650840] : [55.766590, 37.654703],
 			zoom: 16,
 			controls: []
 	});

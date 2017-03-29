@@ -13,20 +13,40 @@
 			display: inline;
 			margin: 25px 0;
 		}
+		@include breakpoint(small){
+			width: 20%;
+			img {
+				padding: 10px;
+				margin: 0;
+			}
+		}
 	}
 	&__descr {
 		width: 65.2%;
 		float: left;
+		@include breakpoint(tablet){
+			font-size: 0.9em;
+		}
+		@include breakpoint(small){
+			float: none;
+			width: auto;
+		}
 	}
 	&__back {
 		text-align: right;
 		margin-top: 13px;
+		@include breakpoint(tablet) {
+			margin-top: 0;
+		}
 	}
 }
 .descr-block {
 	border-top: 1px solid #fff;
-	padding-top: 10px;
-	padding-bottom: 12px;
+	padding: 10px 0 12px;
+	@include breakpoint(small) {
+		padding: 5px 0;
+		border-top: 0;
+	}
 	&:first-child {
 		border-top: 0;
 		padding-top: 0;
@@ -44,11 +64,17 @@
 	}
 	.tags {
 		margin: 0 -10px;
+		@include breakpoint(tablet){
+			margin: 0 -2px;
+		}
 		&__item {
 			background: #f9eed2;
 			color: #997a5c;
 			border: 1px solid #fff;
 			margin: 5px 10px;
+			@include breakpoint(tablet){
+				margin: 2px;
+			}
 			&:hover,
 			&:focus,
 			&--act {
@@ -64,5 +90,8 @@
 		@include font(24,28,700,$font: $pt-serif);
 		color: $red;
 		margin-bottom: 15px;
+	}
+	.catalog {
+		padding: 0 40px;
 	}
 }

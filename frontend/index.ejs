@@ -17,10 +17,10 @@
 				<div class="top-panel">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-6 col-xs-1">
+							<div class="col-sm-6 col-xs-9">
 								<div class="search">
 									<form action="/search/" method="get">
-										<input class="search__input hidden-xs" type="text" name="q" placeholder="Введите строку для поиска по сайту">
+										<input class="search__input" type="text" name="q" placeholder="Введите строку для поиска">
 										<input class="search__submit" type="submit" value="найти">
 									</form>
 								</div>
@@ -42,7 +42,7 @@
 
 									</div>
 							</div>
-							<div class="col-sm-4 col-xs-6">
+							<div class="col-sm-4 col-xs-8 cabinet-outer">
 								<div class="personal-cabinet">
 									<a href="/cabinet.html">Личный кабинет<span class="hidden-xs"> покупателя</span></a>
 								</div>
@@ -70,19 +70,19 @@
 				</div>
 				<div class="menu-panel">
 					<div class="container">
-
+						<button class="c-hamburger c-hamburger--htx">
+							<span>toggle menu</span>
+						</button>
 						<nav id="siteMenu" class="menu-outer">
-							<button class="c-hamburger c-hamburger--htx">
-								<span>toggle menu</span>
-							</button>
+
 							<!-- Site menu data -->
 							<%
 							var menuItems = [
 								{'о&nbsp;винном бутике': '#about'},
-								{'каталог продукции': '\catalog.html'},
-								{'дегустации': '\tasting.html'},
+								{'каталог продукции': '/catalog.html'},
+								{'дегустации': '/tasting.html'},
 								{'акции и программы лояльности': '#promo'},
-								{'оптовикам': '\opt.html' }
+								{'оптовикам': '/opt.html' }
 							]
 							%>
 								<!-- Site menu template -->
