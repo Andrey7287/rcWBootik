@@ -40,3 +40,5 @@ $ npm start
 ```
 $ npm run build
 ```
+## Test
+lrv-wines.b.infodesign.ru
